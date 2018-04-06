@@ -1,12 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>
+    NPS Connect: National Park Service Trip Planner
+  </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <!-- curl -H 'X-Api-Key: 7wQNlZMqMhlH0js2AdSZsiMoge4n3Z0ud2rZVlfW' 'https://developer.nps.gov/api/v1/parks?parkCode=acad' -->
 </head>
+
 <body>
-  
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+
+        <!-- Image and text -->
+        <nav class="navbar navbar-light bg-light">
+          <a class="navbar-brand" href="#">
+            <img src="assets/images/NPSlogo.png" width="100" class="d-inline-block align-top" alt=""> NPS Connect
+          </a>
+        </nav>
+
+        <nav class="navbar navbar-light bg-light">
+          <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Type Park Here" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" id="submitBtn" type="submit">Search</button>
+          </form>
+        </nav>
+
+      </div>
+    </div>
+
+
+
+
+
+    <!-- <div class='sk-ww-facebook-feed' data-embed-id='8275'></div>
+    <script src='https://www.sociablekit.com/app/embed/facebook-feed/widget.js'></script> -->
+
+  </div>
+  <div class="row">
+    <!-- FOOTER -->
+    <footer>
+      &copy; 2018 Team JSON & The VARgonauts UNC Coding Bootcamp
+    </footer>
+  </div>
+  <!-- FOOTER CLOSE-->
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <script src="assets/javascript/nps.js"></script>
 </body>
+
 </html>
