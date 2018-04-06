@@ -1,0 +1,38 @@
+TEST TEMPLATE - PROJECT NAME
+
+d = deferred
+e = met by enhancement
+f = failed
+p = passed
+s = skipped
+w = waiting for further work
+
+Make sure you're working in a copy of this for a homework assignment! 
+
+Requirements
+============
+Fill in from requirements
+
+Bonus
+=====
+Fill in from requirements.
+
+Functionality
+=============
+[] Game initializes globals correctly
+[] Game reinitializes globals correctly
+
+Display
+=======
+[] Page closely resembles demo video
+
+Cleanup
+=======
+[] HTML validates
+[] CSS validates
+[] JS delinted (stretch)
+
+GitHub Pages
+============
+[] Page performs on load as expected
+[] Page performs after reload as expected
