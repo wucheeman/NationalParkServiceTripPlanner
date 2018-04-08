@@ -4,3 +4,66 @@ body {
   background-size: cover 100%;
   background-position: left top;
 }
+
+.navbar-brand #title{
+  display: inline-block;
+  text-align: left;
+}
+
+div.form-group {
+  width: 100%;
+}
+
+div.form-group label {
+  color: white;
+}
+
+#formWrapper h2 {
+  color: white;
+  text-align: center;
+  font-family: 'Old Standard TT', serif;
+}
+
+select#state.form-control {
+  width: 100%;
+}
+
+#title {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 75px;
+  color: white;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  text-shadow: 1.5px 1.5px rgb(88, 32, 0);
+}
+
+.moveMenuText {
+  position: relative;
+}
+
+.menuText {
+  position: absolute;
+  z-index: 100;
+  top: 20px;
+  font-family: 'Permanent Marker', cursive;
+  color: white;
+  background-color: #492202;
+  padding: 10px;
+}
+
+
+
+#footer {
+  font-size: 20px;
+  color: white;
+  font-family: 'Old Standard TT', serif;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+
+
+/* font-family: 'Roboto', sans-serif;
+font-family: 'Playfair Display', serif; */
