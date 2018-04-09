@@ -45,14 +45,20 @@ select#state.form-control {
 .menuText {
   position: absolute;
   z-index: 100;
-  top: 20px;
+  top: 140px;
   font-family: 'Permanent Marker', cursive;
   color: white;
   background-color: #492202;
   padding: 10px;
 }
 
-
+.grid-item {
+  margin: 5px;
+  border-radius: 5px;
+}
+.grid-item img {
+  border-radius: 10px;
+}
 
 #footer {
   font-size: 20px;
