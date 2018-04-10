@@ -1,0 +1,91 @@
+We'll go for all 4 of these. If there is a need for the DB apart from 
+
+1. PARK INFORMATION
+1.1 Get directions
+==================
+1. I click on the picture
+2. I'm given a new page with a form to fill in. Fields in form:
+	Park name (can be selected from drop down)
+	Directions from
+	Park Information (a set of check boxes)
+	???
+3. I enter the name of a park and directions from a local address. I hit submit.
+4. The app formulates a query to Google Maps and sends it.
+5. The query returns with information.
+6. The app shows a new page with the route information on it.
+
+1.2 Get overview
+================
+Steps 1 - 2 are the same as in 1.1.
+3. I enter the name of a park and check 'overview'. I hit submit
+4. The app formulates a query to the NPS and sends it.
+5. The query returns with information.
+6. The app shows a new page with the park overview information on it.
+
+2. PARK EVENTS
+2.1 Get event description
+=========================
+1. I click on the picture
+2. I'm given a new page with a form to fill in. Fields in form:
+	Park name (can be selected from drop down)
+	Date range (can be selected from calendar?)
+3. I enter the name of a park and a date range. I hit submit.
+4. The app formulates a query to the NPS and sends it.
+5. The query returns with information.
+6. The app shows a new page with the park event information on it. Each event has a checkbox by it labeled 'show on map'
+
+2.2 Get event description
+=========================
+1. From the page created in 2.1.5, I click on an event's checkbox.
+4. The app formulates a query to Google Maps and sends it.
+5. The query returns with information.
+6. The app shows a new page with a map and the location of the event marked on it.
+
+3. SOCIAL MEDIA SHARE
+=====================
+
+3.1 Integration with Twitter
+============================
+1. User clicks on the social media picture
+2. App opens up page to Facebook and Twitter integrations.
+3. User selects Twitter integration and logs in.
+
+3.2 Integration with Facebook
+=============================
+1. Same flow as 3.1, except for Facebook.
+
+
+4. LOG IN/PROFILE
+
+4.1 Guest
+=========
+1. User comes in on a new page and is offered these choices
+	- Log in
+	- Create account
+	- Continue as a guest
+2. User clicks on 'continue as guest'
+3. App puts up main page and user can do anything in stories 1, 2, or 3
+
+4.2 Create account
+==================
+1. Same as in 4.1.1
+2. User clicks on create account
+3. App displays new page with profile information in it
+	- Name
+	- Email account
+	- Password
+4. User fills in information and hits submit
+5. App validates entries. If not ok, tells the user and puts up page again. If ok, it proceeds to 6.
+6. App stores profile information in DB. Password is stored in plain text.
+7. App puts up main page and user can do anything in stories 1, 2, or 3
+
+4.3 Log in
+==========
+1. Same as in 4.1.1
+2. User enters email address and password
+3. App matches these against the DB. If no match, tells user and puts up page again. If ok, it proceeds to 4.
+4. App puts up main page and user can do anything in stories 1, 2, or 3
+
+
+ 
+
