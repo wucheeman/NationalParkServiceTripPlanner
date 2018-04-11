@@ -34,122 +34,71 @@
                 <nav class="navbar navbar-light bg-clear">
                     <a class="navbar-brand">
                         <img src="assets/images/NPSlogo.png" width="100" class="d-inline-block align-top" alt="">
-                            <h1 id="title">NPS Connect</h1>
-                            </a>
-                        </nav>
+                        <h1 id="title">NPS Connect</h1>
+                    </a>
+                </nav>
+            </div>
+<!-- END OF HEADER/LOGO/TEXT SECTION -->
+            <div class="col-sm-6">
+<!-- LOGIN/GUEST ACCESS -->
+                <div class="row">
+                    <div class="col-sm-6">
+
+                    </div>
+                    <div class="col-sm-3">
+                        <button type="submit" class="btn btn-primary btn-block">Guest Access</button>
+                    </div>
+                    <div class="col-sm-3">
+                        <button type="submit" id="randomParkBtn" class="btn btn-primary btn-block">Login</button>
                     </div>
                 </div>
+<!-- END OF LOGIN/GUEST ACCESS SECTION -->
+<!-- FACEBOOK LIKE -->
+
+<!-- END OF FACEBOOK LIKE SECTION -->
+<!-- TWITTER LIKE -->
+
+<!-- END OF TWITTER LIKE SECTION -->
+
+
+            </div>
+        </div>
 <!-- END OF HEADER/LOGO SECTION -->
-<!-- MENU SECTION -->
+
+
+
+
+<!-- DYNAMIC CONTENT SECTION -->
+
+<div class="container">
         <div class="row">
-            <!-- <div class="col-sm-3"></div> -->
-            <div class="col-sm-12">
-                <div class="grid" data-packery='{ "itemSelector": ".grid-item" }'>
-                    <div class="grid-item"><img class="block1" src="assets/images/login.png">
-                        <p class="menuText">Log In/Profile</p>
-                    </div>
-                    <div class="grid-item"><img class="block2"  src="assets/images/search.png">
-                        <p class="menuText">Search For A Park</p>
-                    </div>
-                    <div class="grid-item moveMenuText"><img class="block3" src="assets/images/parkinfo.png">
-                        <p class="menuText">Park Information</p>
-                    </div>
-                    <div class="grid-item moveMenuText"><img class="block4" src="assets/images/events.png">
-                        <p class="menuText">Events</p>
-                    </div>
-                    <div class="grid-item moveMenuText"><img src="assets/images/hotels.png">
-                        <p class="menuText">Hotels</p>
-                    </div>
-                    <div class="grid-item moveMenuText"><img src="assets/images/gas.png">
-                        <p class="menuText">Gas</p>
-                    </div>
-                    <div class="grid-item moveMenuText"><img src="assets/images/restaurants.png">
-                        <p class="menuText">Restaurants</p>
-                    </div>
-                    <div class="grid-item moveMenuText"><img src="assets/images/convience_st.png">
-                        <p class="menuText">Convience Stores</p>
-                    </div>
-                    <div class="grid-item moveMenuText"><img src="assets/images/supplies1.png">
-                        <p class="menuText">Supplies</p>
-                    </div>
-                    <div class="grid-item moveMenuText"><img src="assets/images/share.png">
-                        <p class="menuText">Social Media Share</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-<!-- END OF MENU SECTION -->
-<!-- BOOTSTRAP: SEARCH SERVICES -->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3"></div>
-                <div class="col-sm-6">
-
-            </div>
-        </div>
-<!-- END OF BOOTSTRAP: SEARCH SERVICES -->
-<!-- BOOTSTRAP: NEAREST NATIONAL PARK -->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3"></div>
-                <div class="col-sm-6">
-
-            </div>
-        </div>
-<!-- END OF BOOTSTRAP: NEAREST NATIONAL PARK -->
-<!-- BOOTSTRAP: RANDOM PARK -->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3"></div>
-                <div class="col-sm-6">
-
-            </div>
-        </div>
-<!-- END OF BOOTSTRAP: RANDOM PARK -->
-<!-- BOOTSTRAP: BROWSE PARKS -->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3"></div>
-                <div class="col-sm-6">
-
-            </div>
-        </div>
-<!-- END OF BOOTSTRAP: BROWSE PARKS -->
-<!-- BOOTSTRAP: REGISTRATION FORM - INCASE WE DECIDE TO USE IT -->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3"></div>
-                <div class="col-sm-6">
+            <div class="col-sm-7">
+                <div class="col-sm-12">
                     <form class="form-horizontal" role="form" id="formWrapper">
-                        <h2>Search</h2>
-                        <div class="form-group">
-                            <label for="firstName" class="col-sm-3 control-label">Full Name</label>
-                            <div class="col-sm-12">
-                                <input type="text" id="firstName" placeholder="Full Name" class="form-control" autofocus>
+<!-- BOOTSTRAP: SEARCH FORM -->
+                        <div class="row">
+                            <h2>Search</h2>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <input class="form-control mr-sm-2" id="searchInput" type="search" placeholder="Type Park Here" aria-label="Search">
+                            </div>
+                            <div class="col-sm-6">
+                                <button type="submit" id="randomParkBtn" class="btn btn-primary btn-block">Search By Keyword</button>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="email" class="col-sm-3 control-label">Email</label>
+                        <hr>
+                        <div class="row">
                             <div class="col-sm-12">
-                                <input type="email" id="email" placeholder="Email" class="form-control">
-                            </div>
-                        </div>
                         <div class="form-group">
-                            <label for="password1" class="col-sm-3 control-label">Password</label>
-                            <div class="col-sm-12">
-                                <input type="password" id="password1" placeholder="Password" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="password2" class="col-sm-3 control-label">Re-enter Password</label>
-                            <div class="col-sm-12">
-                                <input type="password" id="password2" placeholder="Password" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="birthDate" class="col-sm-3 control-label">Date of Birth</label>
-                            <div class="col-sm-12">
-                                <input type="date" id="birthDate" class="form-control">
+                            <label for="country" class="col-sm-3 control-label">State</label>
+                            <div class="col-sm-9">
+                                <select id="state" class="form-control">
+                                    <option>Alabama</option><option>Alaska</option><option>Arizona</option>
+                                    <option>Arkansas</option><option>California</option><option>Colorado</option>
+                                    <option>Connecticut</option><option>Delaware</option><option>Florida</option>
+                                    <option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group">
@@ -160,33 +109,43 @@
                                 </select>
                             </div>
                         </div>
-                        <!-- /.form-group -->
-
+                        
+                        <!-- SEARCH AND RANDOM PARK BUTTONS -->
                         <div class="form-group">
-                            <div class="col-sm-12">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox">I accept
-                                        <a href="#">terms</a>
-                                    </label>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <button type="submit" class="btn btn-primary btn-block">Search</button>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button type="submit" id="randomParkBtn" class="btn btn-primary btn-block">Pick A Random Park</button>
                                 </div>
                             </div>
                         </div>
-                        <!-- /.form-group -->
-                        <div class="form-group">
-                            <div class="col-sm-12">
-                                <button type="submit" class="btn btn-primary btn-block">Register</button>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-12">
-                                <button type="submit" id="randomParkBtn" class="btn btn-primary btn-block">Pick A Random Park</button>
-                            </div>
-                        </div>
+                        
                     </form>
                     <!-- /form -->
-                </div>
                 <!-- ./container -->
+                
+                
+                
+                <!-- Google iframe here -->
+                <iframe width="550px;" height="325px;" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCESN4bg_XY8N82CwU7ssef7snFR53K1rY
+                &q=Space+Needle,Seattle+WA" allowfullscreen>
+                </iframe>
+                <!-- END OF BOOTSTRAP: SEARCH SERVICES -->
+                <!-- BOOTSTRAP: NEAREST NATIONAL PARK -->
+                <!-- BOOTSTRAP: RANDOM PARK -->
+                <!-- BOOTSTRAP: BROWSE PARKS -->
+
+            </div>
+            <!-- FACEBOOK FEED WIDGET - PROBABLY GOING TO PULL THE FEED IN A DIFFERENT WAY -->
+            <!-- <div class='sk-ww-facebook-feed' data-embed-id='8275'></div>
+            <script src='https://www.sociablekit.com/app/embed/facebook-feed/widget.js'></script> -->
+        
+        
+        
+        
+            <!-- TWITTER FEED WIDGET - NOT DONE YET -->
 
 
 
@@ -194,125 +153,42 @@
 
 
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-3"></div>
-                    <div class="col-sm-6">
-
-                        <!-- REGISTRATION FORM - INCASE WE DECIDE TO USE IT -->
-                        <form class="form-horizontal" role="form" id="formWrapper">
-
-                            data-isotope='{ "itemSelector": ".grid-item", "masonry": { "columnWidth": 200 } }'>
-                            <div class="grid-item">
-
-                                <h2>Registration Form</h2>
-                                <div class="form-group">
-                                    <label for="firstName" class="col-sm-3 control-label">Full Name</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" id="firstName" placeholder="Full Name" class="form-control" autofocus>
-                                    </div>
-                                </div>
 
 
-
-
-                                <div class="form-group">
-                                    <label for="email" class="col-sm-3 control-label">Email</label>
-                                    <div class="col-sm-9">
-                                        <input type="email" id="email" placeholder="Email" class="form-control">
-                                    </div>
-                                </div>
-
-
-
-
-                                <div class="form-group">
-                                    <label for="password1" class="col-sm-3 control-label">Password</label>
-                                    <div class="col-sm-9">
-                                        <input type="password" id="password1" placeholder="Password" class="form-control">
-                                    </div>
-                                </div>
-
-
-
-                                <div class="form-group">
-                                    <label for="password2" class="col-sm-3 control-label">Re-enter Password</label>
-                                    <div class="col-sm-9">
-                                        <input type="password" id="password2" placeholder="Password" class="form-control">
-                                    </div>
-                                </div>
-
-
-
-                                <div class="form-group">
-                                    <label for="birthDate" class="col-sm-3 control-label">Date of Birth</label>
-                                    <div class="col-sm-9">
-                                        <input type="date" id="birthDate" class="form-control">
-                                    </div>
-                                </div>
-
-
-
-
-
-                                <div class="form-group">
-                                    <label for="country" class="col-sm-3 control-label">State</label>
-                                    <div class="col-sm-9">
-                                        <select id="state" class="form-control">
-                                            <option>Alabama</option>
-                                            <option>Alaska</option>
-                                            <option>Arizona</option>
-                                            <option>Arkansas</option>
-                                            <option>California</option>
-                                            <option>Colorado</option>
-                                            <option>Connecticut</option>
-                                            <option>Delaware</option>
-                                            <option>Florida</option>
-                                            <option>Georgia</option>
-                                            <option>Hawaii</option>
-                                            <option>Idaho</option>
-                                            <option>Illinois</option>
-                                            <option>Indiana</option>
-                                            <option>Iowa</option>
-                                            <option>Kansas</option>
-                                            <option>Kentucky</option>
-                                            <option>Louisiana</option>
-                                            <option>Maine</option>
-                                            <option>Maryland</option>
-                                            <option>Massachusetts</option>
-                                            <option>Michigan</option>
-                                            <option>Minnesota</option>
-                                            <option>Mississippi</option>
-                                            <option>Missouri</option>
-                                            <option>Montana</option>
-                                            <option>Nebraska</option>
-                                            <option>Nevada</option>
-                                            <option>New Hampshire</option>
-                                            <option>New Jersey</option>
-                                            <option>New Mexico</option>
-                                            <option>New York</option>
-                                            <option>North Carolina</option>
-                                            <option>North Dakota</option>
-                                            <option>Ohio</option>
-                                            <option>Oklahoma</option>
-                                            <option>Oregon</option>
-                                            <option>Pennsylvania</option>
-                                            <option>Rhode Island</option>
-                                            <option>South Carolina</option>
-                                            <option>South Dakota</option>
-                                            <option>Tennessee</option>
-                                            <option>Texas</option>
-                                            <option>Utah</option>
-                                            <option>Vermont</option>
-                                            <option>Virginia</option>
-                                            <option>Washington</option>
-                                            <option>West Virginia</option>
-                                            <option>Wisconsin</option>
-                                            <option>Wyoming</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <!-- /.form-group -->
+            <div class="col-sm-5"></div>
+                <div class="grid" data-packery='{ "itemSelector": ".grid-item" }'>
+                    
+                    <div class="grid-item"><img class="block1"  src="assets/images/search.png">
+                        <p class="menuText">Search For A Park</p>
+                    </div>
+                    <div class="grid-item moveMenuText"><img class="block2" src="assets/images/parkinfo.png">
+                        <p class="menuText">Get Directions</p>
+                    </div>
+                    <div class="grid-item moveMenuText"><img class="block3" src="assets/images/events.png">
+                        <p class="menuText">Events</p>
+                    </div>
+                    <!-- <div class="grid-item moveMenuText"><img src="assets/images/hotels.png">
+                        <p class="menuText">Hotels</p>
+                    </div> -->
+                    <!-- <div class="grid-item moveMenuText"><img src="assets/images/gas.png">
+                        <p class="menuText">Gas</p>
+                    </div> -->
+                    <!-- <div class="grid-item moveMenuText"><img src="assets/images/restaurants.png">
+                        <p class="menuText">Restaurants</p>
+                    </div> -->
+                    <!-- <div class="grid-item moveMenuText"><img src="assets/images/convience_st.png">
+                        <p class="menuText">Convience Stores</p>
+                    </div> -->
+                    <!-- <div class="grid-item moveMenuText"><img src="assets/images/supplies1.png">
+                        <p class="menuText">Supplies</p>
+                    </div> -->
+                    <div class="grid-item moveMenuText"><img class="block4" src="assets/images/share.png">
+                        <p class="menuText">Social Media Share</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- END OF MENU SECTION -->
 
 
 
@@ -320,74 +196,38 @@
 
 
 
-                                <div class="form-group">
-                                    <div class="col-sm-12">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox">I accept
-                                                <a href="#">terms</a>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
 
 
 
 
 
-                                <!-- /.form-group -->
-                                <div class="form-group">
-                                    <div class="col-sm-12">
-                                        <button type="submit" class="btn btn-primary btn-block">Register</button>
-                                    </div>
-                                </div>
-
-                        </form>
-                        <!-- /form -->
-                        </div>
-                        <!-- ./container -->
-
-
-
-
-                        <!-- FACEBOOK FEED WIDGET - PROBABLY GOING TO PULL THE FEED IN A DIFFERENT WAY -->
-                        <!-- <div class='sk-ww-facebook-feed' data-embed-id='8275'></div>
-    <script src='https://www.sociablekit.com/app/embed/facebook-feed/widget.js'></script> -->
-
-
-
-
-                        <!-- TWITTER FEED WIDGET - NOT DONE YET -->
 
 
 
 
 
-                        <!-- Google iframe here -->
-                        <iframe width="550px;" height="325px;" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCESN4bg_XY8N82CwU7ssef7snFR53K1rY
-    &q=Space+Needle,Seattle+WA" allowfullscreen>
-                        </iframe>
+                        
 
 
 
 
-                        <!-- FOOTER -->
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-sm-3"></div>
-                                <div class="col-sm-9">
-                                    <footer id="footer">
-                                        &copy; 2018 Team JSON & The VARgonauts UNC Coding Bootcamp
-                                    </footer>
-                                </div>
-                            </div>
-                        </div>
+<!-- FOOTER -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-9">
+            <footer id="footer">
+                &copy; 2018 Team JSON & The VARgonauts UNC Coding Bootcamp
+            </footer>
+        </div>
+    </div>
+</div>
 
-                        <br>
+
 </body>
 
 </html>
 
 
 
-<!-- curl -H 'X-Api-Key: 7wQNlZMqMhlH0js2AdSZsiMoge4n3Z0ud2rZVlfW' 'https://developer.nps.gov/api/v1/parks?parkCode=acad' -->
+
