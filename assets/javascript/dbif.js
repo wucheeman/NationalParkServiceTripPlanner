@@ -20,6 +20,11 @@
 const dbInterface = {
   // provides single interface to Firebase
   database: '',
+  name: "",
+  email: "",
+  password: "",
+  // TODO: is this really needed?
+  // birthDate:"",
   initializeDB: function () {
     // initializes database at start of planning session
     console.log('in dbInterface.initializeDB()');
@@ -33,57 +38,67 @@ const dbInterface = {
     };
     firebase.initializeApp(config);
     this.database = firebase.database();
-    // zeros data in DB
-    this.database.ref().set({
-      // intializes data elements in DB if any are required
-      // TODO: these need to be specified and added in
-    });
   },
-  initializeDataElements: function() {
-    // this retrieves data initially and updates whenever it changes
-    // TODO: add parameters users must send
-    console.log('in dbInterface.initializeDataElements()');
-    this.database.ref().on("value", function(snapshot) {
-      // TODO link data elements into globals that all can see
-
-    }, function(errorObject) {
-      console.log("The read failed: " + errorObject.code);
-    });
+  createNewUser(userName, userEmail, userPassword) {
+    // userBirthDate is omitted for now
+    const processedUserEmail = this.processUserEmail(userEmail);
+    this.database.ref().child(processedUserEmail).set({
+        name: userName,
+        password: userPassword,
+        dateAdded: firebase.database.ServerValue.TIMESTAMP
+      });
   },
-  createDBObject: function(object) {
-    console.log('in dbInterface.createDBObject()');
-    // creates new entity in dB to represent object
-    // TODO: use .push() method to do this
-    // returns entityID from Firebase
-    const entityID = '12345abcde';
-    // DUMMY DATA!!!
-    return entityID;
+  processUserEmail: function(userEmail) {
+    // TODO
+    // takes userEmail and replaces '.' with '-dot-' - replace code below
+    const processedUserEmail = userEmail;
+    return processedUserEmail;
   },
-  retrieveDBObject: function(entityID, requester) {
-    // returns an entire object from the DB
-    console.log('in dbInterface.retrieveDBObject()');
-    // requester is optional and maybe not needed at all
-    // DUMMY DATA!!! can be filled in as needed
-    return {};
-  },
-  updateDBObject: function(entityID, updatedObject) {
-    // updates entire object in DB
-    console.log('in dbInterface.updateDBObject()');
-    // uses .set()
-    // no return value unless needed
-  }, 
-  deleteDBObject: function(entityID) {
-    // deleetes entire object from DB
-    console.log('in dbInterface.deleteDBObject()');
-    // implemented only if needed
-    // no return value unless needed
-  },
-  setDataElement: function(entityID, key, value) {
-    // updates single object prorperty vaue in database
-    console.log('in dbInterface.setDataElement()');
-    console.log(player, key, value);
-    // NOTE the [] around the 'key' variable!
-    this.database.ref().child(player).update({[key]: value});
-    console.log('set a value in the DB');
+  validateUser: function(userEmail, password) {
+    // TODO
+    // processUserEmail
+    // retrieve password using email as key
+    // if good return true, else return false
   }
 }
+
+/* code for Anthony
+
+// TODO: firebase stack for submit form. ("#SubmitGoFire").on
+// should be changed to the id we go with once the front end is cleaned.
+
+
+const captureProfileData = () => {
+  // THIS EXISTS
+  $("#submitGoFire").on("click", function(event) {
+  event.preventDefault();
+  // Grabbed values from text boxes
+  name = $("#firstName").val().trim();
+  email = $("#email").val().trim();
+  password1 = $("#password1").val().trim();
+  password2 = $("#password2").val().trim(); 
+  // TODO: let's not do this because it requires separate validation  
+  birthDate = $("#birthDate").val().trim();
+  // THIS IS NEW
+  const validPassword = validatePassword(password1, password2);
+  if (validPassword) {
+    databaseInterface.createNewUser(name, email, password, birthdate);
+  } else {
+    console.log('passwords do not match');
+    // TODO: alert user to try again
+  }
+}
+
+const validatePassword = (password1, password2) => {
+  if (password1 === password2) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// TODO
+Add a fuction that takes a user email and password and asks if valid user or not
+
+
+*/
