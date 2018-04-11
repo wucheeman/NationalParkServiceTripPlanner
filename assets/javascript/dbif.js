@@ -27,7 +27,7 @@ const dbInterface = {
   },
   createNewUser(userName, userEmail, userPassword) {
     // userBirthDate is omitted for now
-    console.log('in createNewUser');
+    console.log('in dbInterface.createNewUser');
     const processedUserEmail = this.processUserEmail(userEmail);
     // console.log('processedUserEmail is ' + processedUserEmail);
     this.database.ref().child(processedUserEmail).set({
@@ -41,12 +41,6 @@ const dbInterface = {
     // Replaces '.' with '-dot-' in email address
     // needed to make legal key in Firebase
     return userEmail.split('.').join('-dot-');
-  },
-  authorizeUser: function(userEmail, password) {
-    // TODO
-    // processUserEmail
-    // retrieve password using email as key
-    // if good return true, else return false
   },
   // methods below will be built if they are required and time permits 
   createNewPlan: function(userEmail, newPlan) {
@@ -106,15 +100,45 @@ const captureProfileData = () => {
   }
 }
 
-// TODO: add this function
+// TODO: add this function to be run after user has submitted profile
 const validatePassword = (password1, password2) => {
-  if (validPassword) {
-    console.log('creating user');
-    dbInterface.createNewUser(name, email, password1); // birthdate is omitted for now
+  if (password1 === password2) {
+    console.log('password is valid');
+    return true;
   } else {
-    console.log('passwords do not match');
-    // TODO: alert user to try again
+    console.log('password is NOT valid');
+    return false;
+  }
 }
+
+// TODO: run this function when user has submitted password to log in
+    const checkPassword = (email, password) => {
+    // Authorizes access to NPS Connect as a user
+      console.log('in checkPasswordTwo');
+      let storedPassword;
+      const processedUserEmail = dbInterface.processUserEmail(email);
+      // retrieve password using email as key
+      dbInterface.database.ref().child(processedUserEmail).on("value", function(snapshot) {
+        setTimeout(() => {
+          if (snapshot.val() === null) {
+            console.log('no such email in DB');
+            // TODO call new function to ask user to enter correct email
+          }
+          storedPassword = snapshot.val().password;
+          console.log('stored password is ' + storedPassword);
+          if (password === storedPassword ) {
+            console.log('password is good');
+            // TODO let user proceed to NPS Connect
+          } else {
+            console.log('password is NO good');
+            // TODO ask user to enter password again
+          }
+        }, 1000);
+      }, function(errorObject) {
+        console.log("The read failed: " + errorObject.code);
+      });
+  }
+
 
 // TODO: add this to a function that is run at startup
 dbInterface.initializeDB();
