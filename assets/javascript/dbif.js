@@ -27,7 +27,9 @@ const dbInterface = {
   },
   createNewUser(userName, userEmail, userPassword) {
     // userBirthDate is omitted for now
+    console.log('in createNewUser');
     const processedUserEmail = this.processUserEmail(userEmail);
+    // console.log('processedUserEmail is ' + processedUserEmail);
     this.database.ref().child(processedUserEmail).set({
         name: userName,
         password: userPassword,
@@ -35,12 +37,12 @@ const dbInterface = {
       });
   },
   processUserEmail: function(userEmail) {
-    // TODO
-    // takes userEmail and replaces '.' with '-dot-' - replace code below
-    const processedUserEmail = userEmail;
-    return processedUserEmail;
+    console.log('in processUserEmail');
+    // Replaces '.' with '-dot-' in email address
+    // needed to make legal key in Firebase
+    return userEmail.split('.').join('-dot-');
   },
-  validateUser: function(userEmail, password) {
+  authorizeUser: function(userEmail, password) {
     // TODO
     // processUserEmail
     // retrieve password using email as key
@@ -104,6 +106,7 @@ const captureProfileData = () => {
   }
 }
 
+// TODO: add this function
 const validatePassword = (password1, password2) => {
   if (validPassword) {
     console.log('creating user');
