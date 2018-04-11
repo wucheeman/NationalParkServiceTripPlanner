@@ -6,9 +6,9 @@
 const dbInterface = {
   // provides single interface to Firebase
   database: '',
-  name: "",
-  email: "",
-  password: "",
+  name: '',
+  email: '',
+  password: '',
   // TODO: is this really needed?
   // birthDate:"",
   initializeDB: function () {
@@ -31,10 +31,10 @@ const dbInterface = {
     const processedUserEmail = this.processUserEmail(userEmail);
     // console.log('processedUserEmail is ' + processedUserEmail);
     this.database.ref().child(processedUserEmail).set({
-        name: userName,
-        password: userPassword,
-        dateAdded: firebase.database.ServerValue.TIMESTAMP
-      });
+      name: userName,
+      password: userPassword,
+      dateAdded: firebase.database.ServerValue.TIMESTAMP
+    });
   },
   processUserEmail: function(userEmail) {
     console.log('in processUserEmail');
