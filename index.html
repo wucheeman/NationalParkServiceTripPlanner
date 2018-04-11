@@ -102,53 +102,82 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-7">
-<!-- BOOTSTRAP: SEARCH FORM -->
+<!-- BOOTSTRAP: SEARCH FORM START -->
                 <div class="row">
                     <div class="col">
                         <form class="form-horizontal" role="form" id="formWrapper">
                             <div class="row">
-                                <h2>Search</h2>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <input class="form-control mr-sm-2" id="keywordSearchInput" type="search" placeholder="Type Park Here" aria-label="Search">
-                                </div>
-                                <div class="col-sm-6">
-                                    <button type="submit" id="keywordSearchBtn" class="btn btn-primary btn-block">Search By Keyword</button>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="form-group">
-                                    <label for="country" class="col-sm-3 control-label">State</label>
-                                    <div class="col-sm-9">
-                                        <select id="browseStateOption" class="form-control">
-                                            <option>Alabama</option><option>Alaska</option><option>Arizona</option>
-                                            <option>Arkansas</option><option>California</option><option>Colorado</option>
-                                            <option>Connecticut</option><option>Delaware</option><option>Florida</option>
-                                            <option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option>
-                                        </select>
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <h2>Search By Keyword</h2><!-- SEARCH BY KEYWORD TITLE -->
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="parks" class="col-sm-3 control-label">Browse Parks</label>
-                                    <div class="col-sm-12">
-                                        <select id="browseParkOption" class="form-control">
-                                            <option id="parkOpt1">Acadia</option><option id="parkOpt2">American Samoa</option><option id="parkOpt3">Arches</option><option id="parkOpt4">Badlands</option><option id="parkOpt5">Big Bend</option><option id="parkOpt6">Biscayne</option><option id="parkOpt7">Black Canyon of the Gunnison</option><option id="parkOpt8">Bryce Canyon</option><option id="parkOpt9">Canyonlands</option><option id="parkOpt10">Capitol Reef</option><option id="parkOpt11">Carlsbad Caverns *</option><option id="parkOpt12">Channel Islands</option><option id="parkOpt13">Congaree</option><option id="parkOpt14">Crater Lake</option><option id="parkOpt15">Cuyahoga Valley</option><option id="parkOpt16">Death Valley</option><option id="parkOpt17">Denali</option><option id="parkOpt18">Dry Tortugas</option><option id="parkOpt19">Everglades</option><option id="parkOpt20">Gates of the Arctic</option><option id="parkOpt21">Gateway Arch</option><option id="parkOpt22">Glacier</option><option id="parkOpt23">Glacier Bay</option><option id="parkOpt24">Grand Canyon *</option><option id="parkOpt25">Grand Teton</option><option id="parkOpt26">Great Basin</option><option id="parkOpt27">Great Sand Dunes</option><option id="parkOpt28">Great Smoky Mountains</option><option id="parkOpt29">Guadalupe Mountains</option><option id="parkOpt30">Haleakalā</option><option id="parkOpt31">Hawaiʻi Volcanoes</option><option id="parkOpt32">Hot Springs</option><option id="parkOpt33">Isle Royale</option><option id="parkOpt34">Joshua Tree</option><option id="parkOpt35">Katmai</option><option id="parkOpt36">Kenai Fjords</option><option id="parkOpt37">Kings Canyon</option><option id="parkOpt38">Kobuk Valley</option><option id="parkOpt39">Lake Clark</option><option id="parkOpt40">Lassen Volcanic</option><option id="parkOpt41">Mammoth Cave</option><option id="parkOpt42">Mesa Verde*</option><option id="parkOpt43">Mount Rainier</option><option id="parkOpt44">North Cascades</option><option id="parkOpt45">Olympic</option><option id="parkOpt46">Petrified Forest</option><option id="parkOpt47">Pinnacles</option><option id="parkOpt48">Redwood *</option><option id="parkOpt49">Rocky Mountain</option><option id="parkOpt50">Saguaro</option><option id="parkOpt51">Sequoia</option><option id="parkOpt52">Shenandoah</option><option id="parkOpt53">Theodore Roosevelt</option><option id="parkOpt54">Virgin Islands</option><option id="parkOpt55">Voyageurs</option><option id="parkOpt56">Wind Cave</option><option id="parkOpt57">Wrangell–St. Elias *</option><option id="parkOpt58">Yellowstone</option><option id="parkOpt59">Yosemite *</option><option id="parkOpt60">Zion</option>
-                                        </select>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <!-- SEARCH BY KEYWORD INPUT -->
+                                                    <input class="form-control mr-sm-2" id="keywordSearchInput" type="search" placeholder="Type Park Here" aria-label="Search">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <!-- SEARCH BY KEYWORD SUBMIT BUTTON -->
+                                                    <button type="submit" id="keywordSearchBtn" class="btn btn-primary btn-block">Search By Keyword</button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 
-                                <!-- SEARCH AND RANDOM PARK BUTTONS -->
+                                
+                                
+                            </div>
+                            
+                            <div class="row">
                                 <div class="form-group">
                                     <div class="row">
+                                        <h2>Search By State</h2><!-- SEARCH BY STATE TITLE -->
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <select id="browseStateOption" class="form-control">
+                                                <option>Alabama</option><option>Alaska</option><option>Arizona</option>
+                                                <option>Arkansas</option><option>California</option><option>Colorado</option>
+                                                <option>Connecticut</option><option>Delaware</option><option>Florida</option>
+                                                <option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option>
+                                            </select>
+                                        </div>
                                         <div class="col-sm-6">
                                             <button type="submit" id="browseParkBtn" class="btn btn-primary btn-block">Search</button>
                                         </div>
-                                        <div class="col-sm-6">
-                                            <button type="submit" id="randomParkBtn" class="btn btn-primary btn-block">Pick A Random Park</button>
-                                        </div>
                                     </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <h2>Browse Parks</h2>
+                                    </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <select id="browseParkOption" class="form-control">
+                                                    <option id="parkOpt1">Acadia</option><option id="parkOpt2">American Samoa</option><option id="parkOpt3">Arches</option><option id="parkOpt4">Badlands</option><option id="parkOpt5">Big Bend</option><option id="parkOpt6">Biscayne</option><option id="parkOpt7">Black Canyon of the Gunnison</option><option id="parkOpt8">Bryce Canyon</option><option id="parkOpt9">Canyonlands</option><option id="parkOpt10">Capitol Reef</option><option id="parkOpt11">Carlsbad Caverns *</option><option id="parkOpt12">Channel Islands</option><option id="parkOpt13">Congaree</option><option id="parkOpt14">Crater Lake</option><option id="parkOpt15">Cuyahoga Valley</option><option id="parkOpt16">Death Valley</option><option id="parkOpt17">Denali</option><option id="parkOpt18">Dry Tortugas</option><option id="parkOpt19">Everglades</option><option id="parkOpt20">Gates of the Arctic</option><option id="parkOpt21">Gateway Arch</option><option id="parkOpt22">Glacier</option><option id="parkOpt23">Glacier Bay</option><option id="parkOpt24">Grand Canyon *</option><option id="parkOpt25">Grand Teton</option><option id="parkOpt26">Great Basin</option><option id="parkOpt27">Great Sand Dunes</option><option id="parkOpt28">Great Smoky Mountains</option><option id="parkOpt29">Guadalupe Mountains</option><option id="parkOpt30">Haleakalā</option><option id="parkOpt31">Hawaiʻi Volcanoes</option><option id="parkOpt32">Hot Springs</option><option id="parkOpt33">Isle Royale</option><option id="parkOpt34">Joshua Tree</option><option id="parkOpt35">Katmai</option><option id="parkOpt36">Kenai Fjords</option><option id="parkOpt37">Kings Canyon</option><option id="parkOpt38">Kobuk Valley</option><option id="parkOpt39">Lake Clark</option><option id="parkOpt40">Lassen Volcanic</option><option id="parkOpt41">Mammoth Cave</option><option id="parkOpt42">Mesa Verde*</option><option id="parkOpt43">Mount Rainier</option><option id="parkOpt44">North Cascades</option><option id="parkOpt45">Olympic</option><option id="parkOpt46">Petrified Forest</option><option id="parkOpt47">Pinnacles</option><option id="parkOpt48">Redwood *</option><option id="parkOpt49">Rocky Mountain</option><option id="parkOpt50">Saguaro</option><option id="parkOpt51">Sequoia</option><option id="parkOpt52">Shenandoah</option><option id="parkOpt53">Theodore Roosevelt</option><option id="parkOpt54">Virgin Islands</option><option id="parkOpt55">Voyageurs</option><option id="parkOpt56">Wind Cave</option><option id="parkOpt57">Wrangell–St. Elias *</option><option id="parkOpt58">Yellowstone</option><option id="parkOpt59">Yosemite *</option><option id="parkOpt60">Zion</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <button type="submit" id="browseParkBtn" class="btn btn-primary btn-block">Search</button>
+                                            </div>
+                                        </div>
+                                </div>
+                                
+                                <!-- SEARCH AND RANDOM PARK BUTTONS -->
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <h2>Pick A Random Park</h2>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <button type="submit" id="randomParkBtn" class="btn btn-primary btn-block">Pick A Random Park</button>
+                                                </div>
+                                            </div>
+                                        
+                                    
                                 </div>
                             </div>
                         </form><!-- /form -->
