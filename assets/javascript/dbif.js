@@ -3,20 +3,6 @@
 // Need this in index.html
 // <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 
-/* ASSUMPTIONS
- ========================================
-- Users will wrap functions and data in objects
-- Objects may be nested more than one layer deep
-- Data structures cannot be pre-positioned in the dB
-- DB will use user object properties as keys
-- Business logic has startup sequence to initialize DB
-*/
-
-/* CAVEATS
-=============================================
-- functions and parameters are best guesses and subject to change!!!
-*/
-
 const dbInterface = {
   // provides single interface to Firebase
   database: '',
@@ -41,7 +27,9 @@ const dbInterface = {
   },
   createNewUser(userName, userEmail, userPassword) {
     // userBirthDate is omitted for now
+    console.log('in createNewUser');
     const processedUserEmail = this.processUserEmail(userEmail);
+    // console.log('processedUserEmail is ' + processedUserEmail);
     this.database.ref().child(processedUserEmail).set({
         name: userName,
         password: userPassword,
@@ -49,16 +37,45 @@ const dbInterface = {
       });
   },
   processUserEmail: function(userEmail) {
-    // TODO
-    // takes userEmail and replaces '.' with '-dot-' - replace code below
-    const processedUserEmail = userEmail;
-    return processedUserEmail;
+    console.log('in processUserEmail');
+    // Replaces '.' with '-dot-' in email address
+    // needed to make legal key in Firebase
+    return userEmail.split('.').join('-dot-');
   },
-  validateUser: function(userEmail, password) {
+  authorizeUser: function(userEmail, password) {
     // TODO
     // processUserEmail
     // retrieve password using email as key
     // if good return true, else return false
+  },
+  // methods below will be built if they are required and time permits 
+  createNewPlan: function(userEmail, newPlan) {
+    // TODO
+    // stores a newly created plan in the database
+    // plan is a JSON object. Only one plan stored at a time
+  },
+  updatePlan: function(userEmail, plan) {
+    // TODO
+    // overwrites existly plan with updated content
+    // plan is a JSON object
+  },
+  deletePlan: function(userEmail) {
+    // TODO
+    // returns 'success' if successful or 'failed' if not
+  },
+  createNewMemory: function(userEmail, newMemory) {
+    // TODO if required
+    // stores a newly created JSON object in the database to save memories of trip
+    // Only one 'memory' is stored at a time
+  },
+  updateMemory: function(userEmail, memory) {
+    // TODO if required
+    // overwrites existly memory with updated content
+    // memory is a JSON object
+  },
+  deleteMemory: function(userEmail) {
+    // TODO if required
+    // returns 'success' if successful or 'failed' if not
   }
 }
 
@@ -67,7 +84,7 @@ const dbInterface = {
 // TODO: firebase stack for submit form. ("#SubmitGoFire").on
 // should be changed to the id we go with once the front end is cleaned.
 
-
+// TODO: add this event handler as a separate function
 const captureProfileData = () => {
   // THIS EXISTS
   $("#submitGoFire").on("click", function(event) {
@@ -89,16 +106,18 @@ const captureProfileData = () => {
   }
 }
 
+// TODO: add this function
 const validatePassword = (password1, password2) => {
-  if (password1 === password2) {
-    return true;
+  if (validPassword) {
+    console.log('creating user');
+    dbInterface.createNewUser(name, email, password1); // birthdate is omitted for now
   } else {
-    return false;
-  }
+    console.log('passwords do not match');
+    // TODO: alert user to try again
 }
 
-// TODO
-Add a fuction that takes a user email and password and asks if valid user or not
+// TODO: add this to a function that is run at startup
+dbInterface.initializeDB();
 
 
 */
