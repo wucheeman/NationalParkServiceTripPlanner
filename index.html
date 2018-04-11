@@ -18,7 +18,7 @@
     <script src="https://unpkg.com/packery@2/dist/packery.pkgd.min.js"></script>
     <script src="assets/javascript/packery.pkgd.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-    <script src="assets/script.js"></script>
+    <script href="assets/javascript/script.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT|Permanent+Marker" rel="stylesheet">
 
@@ -51,10 +51,10 @@
                     <div class="grid-item"><img class="block2"  src="assets/images/search.png">
                         <p class="menuText">Search For A Park</p>
                     </div>
-                    <div class="grid-item moveMenuText"><img src="assets/images/parkinfo.png">
+                    <div class="grid-item moveMenuText"><img class="block3" src="assets/images/parkinfo.png">
                         <p class="menuText">Park Information</p>
                     </div>
-                    <div class="grid-item moveMenuText"><img src="assets/images/events.png">
+                    <div class="grid-item moveMenuText"><img class="block4" src="assets/images/events.png">
                         <p class="menuText">Events</p>
                     </div>
                     <div class="grid-item moveMenuText"><img src="assets/images/hotels.png">
@@ -105,20 +105,6 @@
 
             </div>
         </div>
-            var parkCodes = [
-    acad,npsa,arch,badl,bibe,bisc,blca,brca,cany,care,cave,chis,cong,crla,cuva,deva,dena,drto,ever,gaar,jeff,glac,glba,grca,grta,grba,grsa,grsm,gumo,hale,havo,hosp,isro,jotr,katm,kefj,seki,kova,lacl,lavo,maca,meve,mora,noca,olym,pefo,pinn,redw,romo,sagu,shen,thro,viis,voya,wica,wrst,yell,yose,zion
-]
-            var randomSelect=Math.floor(Math.random() * 61);
- var queryQRL = "https://api.giphy.com/v1/gifs/search?parkCodes" + randomSelect + "&api_key=oc4HHNynCW6opSic49NXu4XgDx2poMUu";
-        console.log(queryQRL);
-
-
-        $.ajax({
-            url: queryQRL,
-            method: "GET"
-        }).done(function (response) {
-            var random = $('randomSelect')
-        }
 <!-- END OF BOOTSTRAP: RANDOM PARK -->
 <!-- BOOTSTRAP: BROWSE PARKS -->
         <div class="container">
@@ -171,11 +157,6 @@
                             <div class="col-sm-12">
                                 <select id="state" class="form-control">
                                     <option id="parkOpt1">Acadia</option><option id="parkOpt2">American Samoa</option><option id="parkOpt3">Arches</option><option id="parkOpt4">Badlands</option><option id="parkOpt5">Big Bend</option><option id="parkOpt6">Biscayne</option><option id="parkOpt7">Black Canyon of the Gunnison</option><option id="parkOpt8">Bryce Canyon</option><option id="parkOpt9">Canyonlands</option><option id="parkOpt10">Capitol Reef</option><option id="parkOpt11">Carlsbad Caverns *</option><option id="parkOpt12">Channel Islands</option><option id="parkOpt13">Congaree</option><option id="parkOpt14">Crater Lake</option><option id="parkOpt15">Cuyahoga Valley</option><option id="parkOpt16">Death Valley</option><option id="parkOpt17">Denali</option><option id="parkOpt18">Dry Tortugas</option><option id="parkOpt19">Everglades</option><option id="parkOpt20">Gates of the Arctic</option><option id="parkOpt21">Gateway Arch</option><option id="parkOpt22">Glacier</option><option id="parkOpt23">Glacier Bay</option><option id="parkOpt24">Grand Canyon *</option><option id="parkOpt25">Grand Teton</option><option id="parkOpt26">Great Basin</option><option id="parkOpt27">Great Sand Dunes</option><option id="parkOpt28">Great Smoky Mountains</option><option id="parkOpt29">Guadalupe Mountains</option><option id="parkOpt30">Haleakalā</option><option id="parkOpt31">Hawaiʻi Volcanoes</option><option id="parkOpt32">Hot Springs</option><option id="parkOpt33">Isle Royale</option><option id="parkOpt34">Joshua Tree</option><option id="parkOpt35">Katmai</option><option id="parkOpt36">Kenai Fjords</option><option id="parkOpt37">Kings Canyon</option><option id="parkOpt38">Kobuk Valley</option><option id="parkOpt39">Lake Clark</option><option id="parkOpt40">Lassen Volcanic</option><option id="parkOpt41">Mammoth Cave</option><option id="parkOpt42">Mesa Verde*</option><option id="parkOpt43">Mount Rainier</option><option id="parkOpt44">North Cascades</option><option id="parkOpt45">Olympic</option><option id="parkOpt46">Petrified Forest</option><option id="parkOpt47">Pinnacles</option><option id="parkOpt48">Redwood *</option><option id="parkOpt49">Rocky Mountain</option><option id="parkOpt50">Saguaro</option><option id="parkOpt51">Sequoia</option><option id="parkOpt52">Shenandoah</option><option id="parkOpt53">Theodore Roosevelt</option><option id="parkOpt54">Virgin Islands</option><option id="parkOpt55">Voyageurs</option><option id="parkOpt56">Wind Cave</option><option id="parkOpt57">Wrangell–St. Elias *</option><option id="parkOpt58">Yellowstone</option><option id="parkOpt59">Yosemite *</option><option id="parkOpt60">Zion</option>
-
-                                    randomParkObj = [parkOpt1:, parkOpt2:, parkOpt3:, parkOpt4:, parkOpt5:, parkOpt6:, parkOpt7:, parkOpt8:, parkOpt9:, parkOpt10:, parkOpt11:, parkOpt12:, parkOpt13:, parkOpt14:, parkOpt15:, parkOpt16:, parkOpt17:, parkOpt18:, parkOpt19:, parkOpt20:, parkOpt21:, parkOpt22:, parkOpt23:, parkOpt24:, parkOpt25:, parkOpt26:, parkOpt27:, parkOpt28:, parkOpt29:, parkOpt30:, parkOpt31:, parkOpt32:, parkOpt33:, parkOpt34:, parkOpt35:, parkOpt36:, parkOpt37:, parkOpt38:, parkOpt39:, parkOpt40:, parkOpt41:, parkOpt42:, parkOpt43:, parkOpt44:, parkOpt45:, parkOpt46:, parkOpt47:, parkOpt48:, parkOpt49:, parkOpt50:, parkOpt51:, parkOpt52:, parkOpt53:, parkOpt54:, parkOpt55:, parkOpt56:, parkOpt57:, parkOpt58:, parkOpt59:, parkOpt60:,]
-
-                                    randomParkArray = [parkOpt1, parkOpt2, parkOpt3, parkOpt4, parkOpt5, parkOpt6, parkOpt7, parkOpt8, parkOpt9, parkOpt10, parkOpt11, parkOpt12, parkOpt13, parkOpt14, parkOpt15, parkOpt16, parkOpt17, parkOpt18, parkOpt19, parkOpt20, parkOpt21, parkOpt22, parkOpt23, parkOpt24, parkOpt25, parkOpt26, parkOpt27, parkOpt28, parkOpt29, parkOpt30, parkOpt31, parkOpt32, parkOpt33, parkOpt34, parkOpt35, parkOpt36, parkOpt37, parkOpt38, parkOpt39, parkOpt40, parkOpt41, parkOpt42, parkOpt43, parkOpt44, parkOpt45, parkOpt46, parkOpt47, parkOpt48, parkOpt49, parkOpt50, parkOpt51, parkOpt52, parkOpt53, parkOpt54, parkOpt55, parkOpt56, parkOpt57, parkOpt58, parkOpt59, parkOpt60,]
-
                                 </select>
                             </div>
                         </div>
@@ -199,7 +180,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-12">
-                                <button type="submit" class="btn btn-primary btn-block">Pick A Random Park</button>
+                                <button type="submit" id="randomParkBtn" class="btn btn-primary btn-block">Pick A Random Park</button>
                             </div>
                         </div>
                     </form>
