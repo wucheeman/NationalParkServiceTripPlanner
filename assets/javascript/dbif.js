@@ -3,20 +3,6 @@
 // Need this in index.html
 // <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 
-/* ASSUMPTIONS
- ========================================
-- Users will wrap functions and data in objects
-- Objects may be nested more than one layer deep
-- Data structures cannot be pre-positioned in the dB
-- DB will use user object properties as keys
-- Business logic has startup sequence to initialize DB
-*/
-
-/* CAVEATS
-=============================================
-- functions and parameters are best guesses and subject to change!!!
-*/
-
 const dbInterface = {
   // provides single interface to Firebase
   database: '',
@@ -96,7 +82,7 @@ const dbInterface = {
 // TODO: firebase stack for submit form. ("#SubmitGoFire").on
 // should be changed to the id we go with once the front end is cleaned.
 
-
+// TODO: add this event handler as a separate function
 const captureProfileData = () => {
   // THIS EXISTS
   $("#submitGoFire").on("click", function(event) {
@@ -119,15 +105,16 @@ const captureProfileData = () => {
 }
 
 const validatePassword = (password1, password2) => {
-  if (password1 === password2) {
-    return true;
+  if (validPassword) {
+    console.log('creating user');
+    dbInterface.createNewUser(name, email, password1); // birthdate is omitted for now
   } else {
-    return false;
-  }
+    console.log('passwords do not match');
+    // TODO: alert user to try again
 }
 
-// TODO
-Add a fuction that takes a user email and password and asks if valid user or not
+// TODO: add this to a function that is run at startup
+dbInterface.initializeDB();
 
 
 */
