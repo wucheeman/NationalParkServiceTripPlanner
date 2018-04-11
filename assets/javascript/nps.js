@@ -3,6 +3,66 @@
 //   // event.preventDefault();
 // });
 
+//Click Handler for Random Park Search
+$("#randomParkBtn").on("click", function(event) {
+  //Pick A Random Number Between 1-60
+  var randomSelect=Math.floor(Math.random() * 60);
+  console.log(randomSelect);
+  //parkCode Array
+  var parkCodes = ["acad","npsa","arch","badl","bibe","bisc","blca","brca","cany","care","cave","chis","cong","crla","cuva", "deva","dena","drto","ever","gaar","jeff","glac","glba","grca","grta","grba","grsa","grsm","gumo","hale","havo","hosp","isro","jotr","katm","kefj","seki","kova","lacl","lavo","maca","meve","mora","noca","olym","pefo","pinn","redw","romo","sagu","shen","thro","viis","voya","wica","wrst","yell","yose","zion"];
+  //
+  var selectedCode = parkCodes[randomSelect]
+  //API Query
+  var queryQRL = "https://developer.nps.gov/api/v1/parks?parkCode=" + selectedCode + "&api_key=7wQNlZMqMhlH0js2AdSZsiMoge4n3Z0ud2rZVlfW";
+  console.log(queryQRL);
+  //
+  var pickRandom = function randomSelect() {
+    for (var i = 0; i < parkcodes.length; i++) {
+    var randomSelect=Math.floor(Math.random() * 60);
+    var selectedCode=parkCodes[randomSelect]
+    }
+  }
+  
+});
+
+//Click Handler for State Park Search
+$("#browseStateBtn").on("click", function(event) {
+  //Pick A Random Number Between 1-60
+  var randomSelect=Math.floor(Math.random() * 60);
+  console.log(randomSelect);
+  //stateCode Array
+  var stateCodes = [
+    "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"
+  ]
+  //
+  var selectedCode = stateCodes[randomSelect]
+  //API Query
+  var queryQRL = "https://developer.nps.gov/api/v1/parks?=stateCode= &api_key=7wQNlZMqMhlH0js2AdSZsiMoge4n3Z0ud2rZVlfW"
+  //console.log of API Query
+  console.log(queryQRL);
+  //AJAX Call
+  $.ajax({
+    url: queryQRL,
+    method: "GET"
+  }).done(function (response) {
+    var random = $('randomSelect');
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //FUNCTION FOR RANDOM PARK SEARCH (TO BE CALLED LATER)
 function randomParkSearch () {
