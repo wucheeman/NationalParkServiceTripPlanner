@@ -18,7 +18,14 @@ $("#keywordSearchBtn").on("click", function (event) {
 // })
 
 // browseParkBtn 
+$("#browseParkBtn").on("click", function (event) {
+    event.preventDefault();
+    $('#insertGooglehere').empty();
+    var place = $('#browseParkOption').val().trim() + 'national park';
+    console.log(place);
+    $('#insertGooglehere').append(' <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCESN4bg_XY8N82CwU7ssef7snFR53K1rY&q=' + place + '" allowfullscreen></iframe >')
 
+});
 
 
 // browseStateOption maybe not
