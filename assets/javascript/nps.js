@@ -3,9 +3,9 @@
 //   // event.preventDefault();
 // });
 
-//ON CLICK FOR RANDOM PARK BUTTON
-$('#randomParkBtn').click(function(){
-  // event.preventDefault();
+
+//FUNCTION FOR RANDOM PARK SEARCH (TO BE CALLED LATER)
+function randomParkSearch () {
   var parkCodes = [
     acad,npsa,arch,badl,bibe,bisc,blca,brca,cany,care,cave,chis,cong,crla,cuva,deva,dena,drto,ever,gaar,jeff,glac,glba,grca,grta,grba,grsa,grsm,gumo,hale,havo,hosp,isro,jotr,katm,kefj,seki,kova,lacl,lavo,maca,meve,mora,noca,olym,pefo,pinn,redw,romo,sagu,shen,thro,viis,voya,wica,wrst,yell,yose,zion,
   ]
@@ -18,7 +18,36 @@ $('#randomParkBtn').click(function(){
   }).done(function (response) {
     var random = $('randomSelect');
   });
+}
+
+
+//FUNCTION FOR STATE PARK SEARCH (TO BE CALLED LATER)
+function stateParkSearch () {
+  var stateCodes = [
+    "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"
+  ]
+  var randomSelect=Math.floor(Math.random() * 51);
+  var queryQRL = "https://developer.nps.gov/api/v1/parks?=stateCode= &api_key=7wQNlZMqMhlH0js2AdSZsiMoge4n3Z0ud2rZVlfW"
+  console.log(queryQRL);
+  $.ajax({
+    url: queryQRL,
+    method: "GET"
+  }).done(function (response) {
+    var random = $('randomSelect');
+  });
+}
+  
+
+
+//ON CLICK FOR RANDOM PARK BUTTON
+const randomeParkClickHandler = (e) => {
+  
+  $('#randomParkBtn').click(function(){
+// event.preventDefault();
+randomParkSearch();
 });
+
+}
 
 //////STEVEN GO THROUGH AND MAKE SURE THAT THEY MATCH AS FAR AS ORDER THAT THEY ARE IN
 //an array with park codes
