@@ -44,20 +44,31 @@ $(document).ready(function () {
   $("#browseStateBtn").on("click", function (event) {
     //prevents on click from resorting to default state
     event.preventDefault();
-    //get value from state dropdown
-    var selectedState = $('#browseStateOption option:selected').text();
-    //CLEAR PARK INFO SECTION
     $('#insertParkInfoHere').empty();
-    //stateCode object
+    //get value from state dropdown
+    //var selectedState = $('#browseStateOption option:selected').text();
+  var selectedState = $('#browseStateOption').val()
+    console.log(selectedState);
+   
+   // stateCode object
     var stateCodeObject = {
       "Alabama": AL, "Alaska": AK, "Arizona": AZ, "Arkansa": AR, "California": CA, "Colorado": CO, "Conneticut": CT, "Delaware": DE, "Florida": FL, "Georgia": GA, "Hawaii": HI, "Idaho": ID, "Illinois": IL, "Indiana": IN, "Iowa": IA, "Kansas": KS, "Kentucky": KY, "Louisiana": LA, "Maine": ME, "Maryland": MD, "Massachusetts": MA, "Michigan": MI, "Minnesota": MN, "Mississippi": MS, "Missouri": MO, "Montana": MT, "Nebraska": NE, "Nevada": NV, "New Hampshire": NH, "New Jersey": NJ, "New Mexico": NM, "New York": NY, "North Carolina": NC, "North Dakota": ND, "Ohio": OH, "Oklahoma": OK, "Oregon": OR, "Pennsylvania": PA, "Rhode Island": RI, "South Carolina": SC, "South Dakota": SD, "Tennessee": TN, "Texas": TX, "Utah": UT, "Vermont": VT, "Virginia": VA, "Washington": WA, "West Virginia": WV, "Wisconson": WI, "Wyoming": WY
     }
+
     // API QUERY FOR STATE CODES FROM NPS
-    var queryQRL = "https://developer.nps.gov/api/v1/parks?=stateCode=" + selectedState + "&api_key=7wQNlZMqMhlH0js2AdSZsiMoge4n3Z0ud2rZVlfW"
+    var queryQRL = "https://developer.nps.gov/api/v1/parks?="+selectedState + "&api_key=7wQNlZMqMhlH0js2AdSZsiMoge4n3Z0ud2rZVlfW"
     //console.log of API Query
     console.log(queryQRL);
   });
 
+  // ("#browseParkBtn").on("click", function (event) {
+  //   event.preventDefault();
+  //   $('#insertGooglehere').empty();
+  //   var place = $('#browseParkOption').val().trim();
+  //   console.log(place);
+  //  // $('#insertGooglehere').append(' <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCESN4bg_XY8N82CwU7ssef7snFR53K1rY&q=' + place + '" allowfullscreen></iframe >')
+
+  // });
 
 //     // API Query
 //     var queryQRL = "https://developer.nps.gov/api/v1/parks?=stateCode= &api_key=7wQNlZMqMhlH0js2AdSZsiMoge4n3Z0ud2rZVlfW"
