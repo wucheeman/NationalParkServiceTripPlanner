@@ -130,3 +130,21 @@ font-family: 'Playfair Display', serif; */
   -webkit-transition: -webkit-transform 0.2s;
           transition: transform 0.2s;
 }
+
+#responseTitles {
+  color: #492202;
+  font-family: 'Permanent Marker', cursive;
+}
+
+#responseInfo {
+  color: #492202;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+#insertParkInfoHere {
+  background-color: #c5a56d;
+  color: #492202;
+  padding: 15px;
+  border: 2px solid #492202;
+  border-radius: 10px;
+}
