@@ -1,0 +1,60 @@
+GIT/GITHUB BRANCH PROCEDURE
+
+Introduction
+============
+You are working on a project with a team and need to do something to the code like fix a bug or add a feature. To avoid conflicts with changes made by your teammates, you need to branch the code.
+
+You will need to work both on your computer and in GitHub.
+
+In these notes, '$' is the bash command prompt.
+
+
+Procedure
+=========
+0. If you like, look at the branches already on your machine with:
+
+	$ git branch
+	
+1. Create a branch and make it the active branch on your machine with:
+
+	$ git checkout -b <branch name>
+
+If you are doing this from the command line, this will move you into the new branch directory. Open VS code with
+
+	$ code . (Mac/Windows)
+	
+In VS Code, look in the lower left corner of the window to verify that you are working on the branch.
+	
+2. Develop your code, and add and commit as usual.
+
+3. When you complete your task, push it up to master/origin at GitHub with:
+
+	$ git push -u origin <branch name>
+	
+This creates a new branch in master/origin. This now must be merged.
+
+4. Create a pull request via a GUI button that GitHub will pop up. This shows changes, flags conflicts, and enables reviewers to look at files and comment on them.
+
+5. Work with your teammates to resolve conflicts or other issues.
+
+6. Once the merge request is good to go, merge the branch into master/origin via a GitHub GUI button.
+
+7. Delete the branch on GitHub using another GUI button.
+
+8. On your computer, enter:
+
+	$ git checkout master
+	
+and
+
+	$ git pull
+
+This changes the active branch back to master and pulls down all changes to it -- including those that have just been merged in. 
+
+9. Delete the old, merged-in branch with 
+
+	$ git branch -d <branch name>
+	
+Check to be sure that it's deleted with 'git branch'.
+
+You're done!
