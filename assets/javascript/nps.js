@@ -3,26 +3,28 @@
 //   // event.preventDefault();
 // });
 
-//Click Handler for Random Park Search
-$("#randomParkBtn").on("click", function(event) {
+//Click Handler for Random Park Search - good to go
+$("#pickRandomPark").on("click", function(event) {
   //Pick A Random Number Between 1-60
   var randomSelect=Math.floor(Math.random() * 60);
   console.log(randomSelect);
   //parkCode Array
   var parkCodes = ["acad","npsa","arch","badl","bibe","bisc","blca","brca","cany","care","cave","chis","cong","crla","cuva", "deva","dena","drto","ever","gaar","jeff","glac","glba","grca","grta","grba","grsa","grsm","gumo","hale","havo","hosp","isro","jotr","katm","kefj","seki","kova","lacl","lavo","maca","meve","mora","noca","olym","pefo","pinn","redw","romo","sagu","shen","thro","viis","voya","wica","wrst","yell","yose","zion"];
-  //
-  var selectedCode = parkCodes[randomSelect]
+  //declaring a variable and making it equal function of park codes
+  var selectedCode=parkCodes[randomSelect]
   //API Query
   var queryQRL = "https://developer.nps.gov/api/v1/parks?parkCode=" + selectedCode + "&api_key=7wQNlZMqMhlH0js2AdSZsiMoge4n3Z0ud2rZVlfW";
   console.log(queryQRL);
   //
   var pickRandom = function randomSelect() {
     for (var i = 0; i < parkcodes.length; i++) {
-    var randomSelect=Math.floor(Math.random() * 60);
+    var randomSelect=Math.floor(Math.random() * 60); 
     var selectedCode=parkCodes[randomSelect]
+    // var queryQRL = "https://developer.nps.gov/api/v1/parks?parkCode" + selectedCode + "&api_key=7wQNlZMqMhlH0js2AdSZsiMoge4n3Z0ud2rZVlfW";
+    // console.log(queryQRL);
+    // var selectedCode=parkCodes[randomSelect] 
     }
   }
-  
 });
 
 //Click Handler for State Park Search
@@ -64,48 +66,7 @@ $("#browseStateBtn").on("click", function(event) {
 
 
 
-//FUNCTION FOR RANDOM PARK SEARCH (TO BE CALLED LATER)
-function randomParkSearch () {
-  var parkCodes = [
-    acad,npsa,arch,badl,bibe,bisc,blca,brca,cany,care,cave,chis,cong,crla,cuva,deva,dena,drto,ever,gaar,jeff,glac,glba,grca,grta,grba,grsa,grsm,gumo,hale,havo,hosp,isro,jotr,katm,kefj,seki,kova,lacl,lavo,maca,meve,mora,noca,olym,pefo,pinn,redw,romo,sagu,shen,thro,viis,voya,wica,wrst,yell,yose,zion,
-  ]
-  var randomSelect=Math.floor(Math.random() * 61);
-  var queryQRL = "https://developer.nps.gov/api/v1/parks?parkCode" + randomSelect + "&api_key=oc4HHNynCW6opSic49NXu4XgDx2poMUu";
-  console.log(queryQRL);
-  $.ajax({
-    url: queryQRL,
-    method: "GET"
-  }).done(function (response) {
-    var random = $('randomSelect');
-  });
-}
 
-
-//FUNCTION FOR STATE PARK SEARCH (TO BE CALLED LATER)
-function stateParkSearch () {
-  var stateCodes = [
-    "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"
-  ]
-  var randomSelect=Math.floor(Math.random() * 51);
-  var queryQRL = "https://developer.nps.gov/api/v1/parks?=stateCode= &api_key=7wQNlZMqMhlH0js2AdSZsiMoge4n3Z0ud2rZVlfW"
-  console.log(queryQRL);
-  $.ajax({
-    url: queryQRL,
-    method: "GET"
-  }).done(function (response) {
-    var random = $('randomSelect');
-  });
-}
-  
-
-
-//ON CLICK FOR RANDOM PARK BUTTON
-const randomeParkClickHandler = (e) => {
-  
-  $('#randomParkBtn').click(function(){
-// event.preventDefault();
-randomParkSearch();
-});
 
 }
 
@@ -126,18 +87,3 @@ randomParkSearch();
   randomParkArray = [
     parkOpt1, parkOpt2, parkOpt3, parkOpt4, parkOpt5, parkOpt6, parkOpt7, parkOpt8, parkOpt9, parkOpt10, parkOpt11, parkOpt12, parkOpt13, parkOpt14, parkOpt15, parkOpt16, parkOpt17, parkOpt18, parkOpt19, parkOpt20, parkOpt21, parkOpt22, parkOpt23, parkOpt24, parkOpt25, parkOpt26, parkOpt27, parkOpt28, parkOpt29, parkOpt30, parkOpt31, parkOpt32, parkOpt33, parkOpt34, parkOpt35, parkOpt36, parkOpt37, parkOpt38, parkOpt39, parkOpt40, parkOpt41, parkOpt42, parkOpt43, parkOpt44, parkOpt45, parkOpt46, parkOpt47, parkOpt48, parkOpt49, parkOpt50, parkOpt51, parkOpt52, parkOpt53, parkOpt54, parkOpt55, parkOpt56, parkOpt57, parkOpt58, parkOpt59, parkOpt60
   ]
-
-
-
-//API QUERY FOR RANDOM PARK CODES
-var randomSelect=Math.floor(Math.random() * 61);
-var selectedCode=parkCodes[randomNumber]
-var queryQRL = "https://developer.nps.gov/api/v1/parks?parkCode" + randomNumber + "&api_key=oc4HHNynCW6opSic49NXu4XgDx2poMUu";
-console.log(queryQRL);
-    
-$.ajax({
-    url: queryQRL,
-    method: "GET"
-}).done(function (response) {
-    var random = $('randomSelect')
-});

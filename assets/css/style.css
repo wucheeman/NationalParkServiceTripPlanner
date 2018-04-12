@@ -3,6 +3,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover 100%;
   background-position: left top;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .navbar-brand #title{
@@ -38,9 +40,7 @@ select#state.form-control {
   text-shadow: 1.5px 1.5px rgb(88, 32, 0);
 }
 
-.moveMenuText {
-  position: relative;
-}
+
 
 .menuText {
   position: absolute;
@@ -54,13 +54,7 @@ select#state.form-control {
   padding: 10px;
 }
 
-.grid-item {
-  margin: 5px;
-  border-radius: 5px;
-}
-.grid-item img {
-  border-radius: 10px;
-}
+
 
 #footer {
   font-size: 20px;
@@ -71,7 +65,68 @@ select#state.form-control {
   margin-top: 30px;
 }
 
-
-
+/*/////////////GOOGLE FONT CSS///////////////*/
 /* font-family: 'Roboto', sans-serif;
 font-family: 'Playfair Display', serif; */
+
+
+/*////////////////PACKERY CSS////////////////*/
+.moveMenuText {
+  position: relative;
+}
+
+.grid-item {
+  margin: 5px;
+  border-radius: 5px;
+}
+.grid-item img {
+  border-radius: 10px;
+}
+
+/*/////PACKERY CSS FROM JQUERY UI DRAGGABLE///////////*/
+
+* { box-sizing: border-box; } 
+
+
+/* ---- grid ---- */
+
+.grid {
+  max-width: 450px;
+}
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-item {
+  float: left;
+  width: 200px;
+  height: 200px;
+  border: 2px solid hsla(0, 0%, 0%, 0.5);
+}
+
+.grid-item--width2 { width: 200px; }
+.grid-item--height2 { height: 200px; }
+
+.grid-item:hover {
+  border-color: hsla(0, 0%, 100%, 0.5);
+  cursor: move;
+}
+
+.grid-item.ui-draggable-dragging,
+.grid-item.is-positioning-post-drag {
+  background: #C90;
+  z-index: 2;
+}
+
+.packery-drop-placeholder {
+  outline: 3px dashed hsla(0, 0%, 0%, 0.5);
+  outline-offset: -6px;
+  -webkit-transition: -webkit-transform 0.2s;
+          transition: transform 0.2s;
+}
