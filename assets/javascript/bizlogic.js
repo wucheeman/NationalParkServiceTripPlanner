@@ -1,6 +1,7 @@
 $( document ).ready(function() {
   console.log( "ready!" );
-  dbInterface.initializeDB()
+  dbInterface.initializeDB();
+  $(document).on('click', clickHandler);
 
 
 // TODO: add this event handler as a separate function
@@ -22,7 +23,6 @@ const captureProfileData = () => {
   } else {
     console.log('passwords do not match');
     // TODO: alert user to try again
-  
 }
   })
 }
@@ -37,3 +37,61 @@ function LoadFbSDK (d, s, id) {
  }   (document, 'script', 'facebook-jssdk');
 
 });
+
+
+const checkPassword = (email, password) => {
+  // Authorizes access to NPS Connect as a user
+    console.log('in checkPassword');
+    let storedPassword;
+    const processedUserEmail = dbInterface.processUserEmail(email);
+    console.log('processedUserEmail is: ' + processedUserEmail);
+    // retrieve password using email as key
+    dbInterface.database.ref().child(processedUserEmail).on("value", function(snapshot) {
+      setTimeout(() => {
+        if (snapshot.val() === null) {
+          console.log('no such email in DB');
+          promptForCorrectEmail();
+        }
+        else {
+          storedPassword = snapshot.val().password;
+          console.log('stored password is ' + storedPassword);
+          if (password === storedPassword ) {
+            console.log('password is good');
+            clearIt();
+            welcomeUser();
+            setTimeout(() => {
+              clearIt();
+            }, 2000);
+          } else {
+            console.log('password is NO good');
+            promptForCorrectPassword();
+          }
+        }
+      }, 1000);
+    }, function(errorObject) {
+      console.log("The read failed: " + errorObject.code);
+    });
+}
+
+const clickHandler = (e) => {
+    console.log('in clickHandler');
+  const clickTarget = e.target.id;
+  let message;
+  switch (clickTarget) {
+    case 'login':
+      console.log('user attempting to log in');
+      makeLogInPrompt();
+      break;
+    case 'requestAuth':
+      console.log('user has submitted email and password');
+      event.preventDefault;
+      let userEmail = $("#email").val().trim();
+      let userPassword = $("#pwd").val().trim();
+      checkPassword(userEmail, userPassword);
+      break;
+    default:
+      console.log('user clicked in unsupported region');
+  }
+}
+
+
