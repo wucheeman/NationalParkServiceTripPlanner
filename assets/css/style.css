@@ -54,7 +54,24 @@ select#state.form-control {
   padding: 10px;
 }
 
-
+#guestAccess {
+margin-top: 30px;
+margin-right: 30px;
+background-color: #492202;
+transition: background-color 0.5s ease;
+}
+#guestAccess:hover {
+  background-color: #723707;
+  }
+#login {
+  margin-top: 30px;
+  margin-right: 30px;
+  background-color: #492202;
+  transition: background-color 0.5s ease;
+}
+#login:hover {
+  background-color: #723707;
+  }
 
 #footer {
   font-size: 20px;
@@ -91,7 +108,7 @@ font-family: 'Playfair Display', serif; */
 /* ---- grid ---- */
 
 .grid {
-  max-width: 450px;
+  max-width: 500px;
 }
 
 /* clear fix */

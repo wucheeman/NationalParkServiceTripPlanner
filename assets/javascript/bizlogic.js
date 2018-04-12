@@ -15,7 +15,7 @@ const captureProfileData = () => {
   password1 = $("#password1").val().trim();
   password2 = $("#password2").val().trim(); 
   // TODO: let's not do this because it requires separate validation  
-  birthDate = $("#birthDate").val().trim();
+  // birthDate = $("#birthDate").val().trim();
   // THIS IS NEW
   const validPassword = validatePassword(password1, password2);
   if (validPassword) {

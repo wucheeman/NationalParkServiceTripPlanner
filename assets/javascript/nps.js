@@ -1,5 +1,9 @@
 $(document).ready(function () {
 
+
+  
+
+
   //Click Handler for Random Park Search
   $("#randomParkBtn").on("click", function (event) {
     console.log("click handler working");
@@ -29,7 +33,6 @@ $(document).ready(function () {
       url: "https://developer.nps.gov/api/v1/parks?parkCode=" + selectedCode + "&api_key=7wQNlZMqMhlH0js2AdSZsiMoge4n3Z0ud2rZVlfW",
       method: "GET"
     }).done(function (response) {
-
       console.log('response.data[0]', response.data[0]);
       $('#insertParkInfoHere').empty();
       $('#insertParkInfoHere').append('<h2 id="responseTitle">' + "Name of National Park: " + '</h2><span id="responseInfo">' + response.data[0].fullName + '</span>');
@@ -42,46 +45,49 @@ $(document).ready(function () {
 
 
 
-
-
-  //Click Handler for State Park Search
   $("#browseStateBtn").on("click", function (event) {
-    console.log("click handler working");
+    //prevents on click from resorting to default state
     event.preventDefault();
+    //get value from state dropdown
+    var selectedState = $('#browseStateOption option:selected').text();
+    //CLEAR PARK INFO SECTION
     $('#insertParkInfoHere').empty();
-    //stateCode Array
-    var stateCodes = [
-      "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"
-    ]
-    var stateOptions = [
-      "Alabama", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"
-    ]
-    console.log(stateCodes);
-    // API Query
-    var queryQRL = "https://developer.nps.gov/api/v1/parks?=stateCode= &api_key=7wQNlZMqMhlH0js2AdSZsiMoge4n3Z0ud2rZVlfW"
+    //stateCode object
+    var stateCodeObject = {
+      "Alabama": AL, "Alaska": AK, "Arizona": AZ, "Arkansa": AR, "California": CA, "Colorado": CO, "Conneticut": CT, "Delaware": DE, "Florida": FL, "Georgia": GA, "Hawaii": HI, "Idaho": ID, "Illinois": IL, "Indiana": IN, "Iowa": IA, "Kansas": KS, "Kentucky": KY, "Louisiana": LA, "Maine": ME, "Maryland": MD, "Massachusetts": MA, "Michigan": MI, "Minnesota": MN, "Mississippi": MS, "Missouri": MO, "Montana": MT, "Nebraska": NE, "Nevada": NV, "New Hampshire": NH, "New Jersey": NJ, "New Mexico": NM, "New York": NY, "North Carolina": NC, "North Dakota": ND, "Ohio": OH, "Oklahoma": OK, "Oregon": OR, "Pennsylvania": PA, "Rhode Island": RI, "South Carolina": SC, "South Dakota": SD, "Tennessee": TN, "Texas": TX, "Utah": UT, "Vermont": VT, "Virginia": VA, "Washington": WA, "West Virginia": WV, "Wisconson": WI, "Wyoming": WY
+    }
+    // API QUERY FOR STATE CODES FROM NPS
+    var queryQRL = "https://developer.nps.gov/api/v1/parks?=stateCode=" + selectedState + "&api_key=7wQNlZMqMhlH0js2AdSZsiMoge4n3Z0ud2rZVlfW"
     //console.log of API Query
     console.log(queryQRL);
-    //  
-    var pickRandom = function randomSelect() {
-      for (var i = 0; i < parkcodes.length; i++) {
-        var randomSelect = Math.floor(Math.random() * 60);
-        var selectedCode = parkCodes[randomSelect]
-        var selectedCode = parkCodes[randomSelect]
-      }
-    }
-    //AJAX Call
-    $.ajax({
-      url: queryQRL,
-      method: "GET"
-    }).done(function (response) {
-      console.log('response.data[0]', response.data[0]);
-      $('#insertParkInfoHere').empty();
-      $('#insertParkInfoHere').append('<h2 id="responseTitle">' + "Name of National Park: " + '</h2><span id="responseInfo">' + response.data[0].fullName + '</span>');
-      $('#insertParkInfoHere').append('<h2 id="responseTitle">' + "Location: " + '</h2><span id="responseInfo">' + response.data[0].states + '</span>');
-    });
   });
 
-});
+
+//     // API Query
+//     var queryQRL = "https://developer.nps.gov/api/v1/parks?=stateCode= &api_key=7wQNlZMqMhlH0js2AdSZsiMoge4n3Z0ud2rZVlfW"
+//     //console.log of API Query
+//     console.log(queryQRL);
+//     //  
+//     var pickRandom = function randomSelect() {
+//       for (var i = 0; i < parkcodes.length; i++) {
+//         var randomSelect = Math.floor(Math.random() * 60);
+//         var selectedCode = parkCodes[randomSelect]
+//         var selectedCode = parkCodes[randomSelect]
+//       }
+//     }
+//     //AJAX Call
+//     $.ajax({
+//       url: queryQRL,
+//       method: "GET"
+//     }).done(function (response) {
+//       console.log('response.data[0]', response.data[0]);
+//       $('#insertParkInfoHere').empty();
+//       $('#insertParkInfoHere').append('<h2 id="responseTitle">' + "Name of National Park: " + '</h2><span id="responseInfo">' + response.data[0].fullName + '</span>');
+//       $('#insertParkInfoHere').append('<h2 id="responseTitle">' + "Location: " + '</h2><span id="responseInfo">' + response.data[0].states + '</span>');
+//     });
+//   });
+
+// });
 
 
 
@@ -122,5 +128,7 @@ $(document).ready(function () {
 
 // //just an array with the html park option#s in it in case you need it
 //   randomParkArray = [
-//     parkOpt1, parkOpt2, parkOpt3, parkOpt4, parkOpt5, parkOpt6, parkOpt7, parkOpt8, parkOpt9, parkOpt10, parkOpt11, parkOpt12, parkOpt13, parkOpt14, parkOpt15, parkOpt16, parkOpt17, parkOpt18, parkOpt19, parkOpt20, parkOpt21, parkOpt22, parkOpt23, parkOpt24, parkOpt25, parkOpt26, parkOpt27, parkOpt28, parkOpt29, parkOpt30, parkOpt31, parkOpt32, parkOpt33, parkOpt34, parkOpt35, parkOpt36, parkOpt37, parkOpt38, parkOpt39, parkOpt40, parkOpt41, parkOpt42, parkOpt43, parkOpt44, parkOpt45, parkOpt46, parkOpt47, parkOpt48, parkOpt49, parkOpt50, parkOpt51, parkOpt52, parkOpt53, parkOpt54, parkOpt55, parkOpt56, parkOpt57, parkOpt58, parkOpt59, parkOpt60
-//   ]
+//     parkOpt1, parkOpt2, parkOpt3, parkOpt4, parkOpt5, parkOpt6, parkOpt7, parkOpt8, parkOpt9, parkOpt10, parkOpt11, parkOpt12, parkOpt13, parkOpt14, parkOpt15, parkOpt16, parkOpt17, parkOpt18, parkOpt19, parkOpt20, parkOpt21, parkOpt22, parkOpt23, parkOpt24, parkOpt25, parkOpt26, parkOpt27, parkOpt28, parkOpt29, parkOpt30, parkOpt31, parkOpt32, parkOpt33, parkOpt34, parkOpt35, parkOpt36, parkOpt37, parkOpt38, parkOpt39, parkOpt40, parkOpt41, parkOpt42, parkOpt43, parkOpt44, parkOpt45, parkOpt46, parkOpt47, parkOpt48, parkOpt49, parkOpt50, parkOpt51, parkOpt52, parkOpt53, parkOpt54, parkOpt55, parkOpt56, parkOpt57, parkOpt58, parkOpt59, parkOpt60]
+
+
+});

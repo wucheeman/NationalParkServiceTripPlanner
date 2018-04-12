@@ -8,13 +8,13 @@
 
     <title>NPS Connect: National Park Service Trip Planner</title>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
+    crossorigin="anonymous">
+
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <script src="https://unpkg.com/packery@2/dist/packery.pkgd.min.js"></script>
+
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT|Permanent+Marker" rel="stylesheet">
 
 </head>
@@ -24,7 +24,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-<!-- HEADER LOGO & TEXT -->
+                <!-- HEADER LOGO & TEXT -->
                 <nav class="navbar navbar-light bg-clear">
                     <a class="navbar-brand">
                         <img src="assets/images/NPSlogo.png" width="100" class="d-inline-block align-top" alt="logo">
@@ -32,237 +32,351 @@
                     </a>
                 </nav>
             </div>
-<!-- END OF HEADER/LOGO/TEXT SECTION -->
-            <div class="offset-col-sm-6">
-<!-- LOGIN/GUEST ACCESS -->
+            <!-- END OF HEADER/LOGO/TEXT SECTION -->
+            <div class="col-sm-6">
                 <div class="row">
+                    <!-- LOGIN/GUEST ACCESS -->
                     <div class="col-sm-6">
 
                     </div>
-                    <div class="col-sm-3">
-                        <button type="submit" class="btn btn-primary btn-block">Guest Access</button>
-                    </div>
-                    <div class="col-sm-3">
-                        <button type="submit" id="login" class="btn btn-primary btn-block">Login</button>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <!-- FACEBOOK LIKE HERE -->
+                            </div>
+                            <div class="col-sm-6">
+                                <!-- TWITTER LIKE HERE -->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button type="submit" id="login" id="login" class="btn btn-primary btn-block">Login</button>
+                        </div>
+                        
                     </div>
                 </div>
-<!-- END OF LOGIN/GUEST ACCESS SECTION -->
-<!-- FACEBOOK SHARE -->
-<div class="fb-share-button" 
-data-href="https://www.nps.gov/index.html" 
-data-layout="button_count">
-</div>
-<!-- END OF FACEBOOK SHARE SECTION -->
-<!-- TWITTER SHARE -->
+                <!-- END OF LOGIN/GUEST ACCESS SECTION -->
+                <!-- FACEBOOK SHARE -->
+                <div class="fb-share-button" data-href="https://www.facebook.com/nationalparkservice/?ref=br_rs" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Fnationalparkservice%2F%3Fref%3Dbr_rs&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+                <!-- END OF FACEBOOK SHARE SECTION -->
+                <!-- TWITTER SHARE -->
 
-<!-- END OF TWITTER SHARE SECTION -->
+                <!-- END OF TWITTER SHARE SECTION -->
 
 
             </div>
-        </div><!-- END OF HEADER/LOGO SECTION -->
+        </div>
+        <!-- END OF HEADER/LOGO SECTION -->
 
 
 
 
 
-<!-- DYNAMIC CONTENT SECTION -->
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-7">
-                <!-- GOOGLE IFRAME GOES HERE -->
+        <!-- DYNAMIC CONTENT SECTION -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7">
+                    <!-- GOOGLE IFRAME GOES HERE -->
                     <div id="insertGooglehere"></div>
-                <!-- END OF GOOGLE IFRAME HERE -->
+                    <!-- END OF GOOGLE IFRAME HERE -->
+                    <!-- LOGIN GOES HERE -->
+                    <div id="loginPrompt"></div>
+                    <!-- END OF SEARCH HERE -->
+                    <!-- SEARCH GOES HERE -->
+                    <div id="insertSearchFormhere"></div>
+                    <!-- END OF SEARCH HERE -->
 
-                <!-- SEARCH GOES HERE -->
-                <div id="insertSearchFormhere"></div>
-                <!-- END OF SEARCH HERE -->
+                    <!-- REGISTRATION GOES HERE -->
+                    <div id="insertRegistrationhere"></div>
+                    <!-- END OF REGISTRATION HERE -->
 
-                <!-- REGISTRATION GOES HERE -->
-                <div id="insertRegistrationhere"></div>
-                <!-- END OF REGISTRATION HERE -->
+                    <!-- REGISTRATION GOES HERE -->
+                    <div id="insertParkInfoHere"></div>
+                    <!-- END OF REGISTRATION HERE -->
 
-                <!-- REGISTRATION GOES HERE -->
-                <div id="insertParkInfoHere"></div>
-                <!-- END OF REGISTRATION HERE -->
+                    <!-- FACEBOOK SHARE GOES HERE -->
+                    <!-- <div id="fb-root"></div> -->
+                    <!-- END OF FACEBOOK SHARE HERE -->
+                    <!-- TWITTER SHARE GOES HERE -->
+                    <div id="inserttwitterhere"></div>
+                    <!-- END OF TWITTER SHARE HERE -->
+                </div>
+                <div class="col-sm-5">
+                    <div class="grid" data-packery='{ "itemSelector": ".grid-item" }'>
 
-                <!-- FACEBOOK SHARE GOES HERE -->
-               
-                <!-- END OF FACEBOOK SHARE HERE -->
-                <!-- TWITTER SHARE GOES HERE -->
-                <div id="inserttwitterhere"></div>
-                <!-- END OF TWITTER SHARE HERE -->
-            </div>
-            <div class="col-sm-5">
-                <div class="grid" data-packery='{ "itemSelector": ".grid-item" }'>
-                    
-                    <div class="grid-item moveMenuText"><img class="block1"  src="assets/images/search.png">
-                        <p class="menuText">Search For A Park</p>
-                    </div>
-                    <div class="grid-item moveMenuText"><img class="block2" src="assets/images/parkinfo.png">
-                        <p class="menuText">Get Directions</p>
-                    </div>
-                    <div class="grid-item moveMenuText"><img class="block3" src="assets/images/events.png">
-                        <p class="menuText">Events</p>
-                    </div>
-                    <div class="grid-item moveMenuText"><img class="block4" src="assets/images/share.png">
-                        <p class="menuText">Social Media Share</p>
-                    </div>
-                    <!-- <div class="grid-item moveMenuText"><img src="assets/images/hotels.png">
+                        <div class="grid-item moveMenuText">
+                            <img class="block1" src="assets/images/search.png">
+                            <p class="menuText">Search For A Park</p>
+                        </div>
+                        <div class="grid-item moveMenuText">
+                            <img class="block2" src="assets/images/parkinfo.png">
+                            <p class="menuText">Get Directions</p>
+                        </div>
+                        <div class="grid-item moveMenuText">
+                            <img class="block3" src="assets/images/events.png">
+                            <p class="menuText">Events</p>
+                        </div>
+                        <div class="grid-item moveMenuText">
+                            <img class="block4" src="assets/images/share.png">
+                            <p class="menuText">Social Media Share</p>
+                        </div>
+                        <!-- <div class="grid-item moveMenuText"><img src="assets/images/hotels.png">
                         <p class="menuText">Hotels</p>
                     </div> -->
-                    <!-- <div class="grid-item moveMenuText"><img src="assets/images/gas.png">
+                        <!-- <div class="grid-item moveMenuText"><img src="assets/images/gas.png">
                         <p class="menuText">Gas</p>
                     </div> -->
-                    <!-- <div class="grid-item moveMenuText"><img src="assets/images/restaurants.png">
+                        <!-- <div class="grid-item moveMenuText"><img src="assets/images/restaurants.png">
                         <p class="menuText">Restaurants</p>
                     </div> -->
-                    <!-- <div class="grid-item moveMenuText"><img src="assets/images/convience_st.png">
+                        <!-- <div class="grid-item moveMenuText"><img src="assets/images/convience_st.png">
                         <p class="menuText">Convience Stores</p>
                     </div> -->
-                    <!-- <div class="grid-item moveMenuText"><img src="assets/images/supplies1.png">
+                        <!-- <div class="grid-item moveMenuText"><img src="assets/images/supplies1.png">
                         <p class="menuText">Supplies</p>
                     </div> -->
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-<!-- END OF DYNAMIC CONTENT SECTION -->
+        <!-- END OF DYNAMIC CONTENT SECTION -->
 
-<!-- HTML CONTENT SECTION -->
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-7">
-<!-- BOOTSTRAP: SEARCH FORM START -->
-                <div class="row">
-                    <div class="col">
-                        <form class="form-horizontal" role="form" id="formWrapper">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="row">
-                                        <h2>Search By Keyword</h2><!-- SEARCH BY KEYWORD TITLE -->
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <!-- SEARCH BY KEYWORD INPUT -->
-                                                    <input class="form-control mr-sm-2" id="keywordSearchInput" type="search" placeholder="Type Park Here" aria-label="Search">
-                                                </div>
-                                                <div class="col-sm-6">
-                                                    <!-- SEARCH BY KEYWORD SUBMIT BUTTON -->
-                                                    <button type="submit" id="keywordSearchBtn" class="btn btn-primary btn-block">Search By Keyword</button>
-                                                </div>
+        <!-- HTML CONTENT SECTION -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7">
+                    <!-- BOOTSTRAP: SEARCH FORM START -->
+                    <div class="row">
+                        <div class="col">
+                            <form class="form-horizontal" role="form" id="formWrapper">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <h2>Search By State</h2>
+                                            <!-- SEARCH BY STATE TITLE -->
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <select id="browseStateOption" class="form-control">
+                                                    <option>Alabama</option>
+                                                    <option>Alaska</option>
+                                                    <option>Arizona</option>
+                                                    <option>Arkansas</option>
+                                                    <option>California</option>
+                                                    <option>Colorado</option>
+                                                    <option>Connecticut</option>
+                                                    <option>Delaware</option>
+                                                    <option>Florida</option>
+                                                    <option>Georgia</option>
+                                                    <option>Hawaii</option>
+                                                    <option>Idaho</option>
+                                                    <option>Illinois</option>
+                                                    <option>Indiana</option>
+                                                    <option>Iowa</option>
+                                                    <option>Kansas</option>
+                                                    <option>Kentucky</option>
+                                                    <option>Louisiana</option>
+                                                    <option>Maine</option>
+                                                    <option>Maryland</option>
+                                                    <option>Massachusetts</option>
+                                                    <option>Michigan</option>
+                                                    <option>Minnesota</option>
+                                                    <option>Mississippi</option>
+                                                    <option>Missouri</option>
+                                                    <option>Montana</option>
+                                                    <option>Nebraska</option>
+                                                    <option>Nevada</option>
+                                                    <option>New Hampshire</option>
+                                                    <option>New Jersey</option>
+                                                    <option>New Mexico</option>
+                                                    <option>New York</option>
+                                                    <option>North Carolina</option>
+                                                    <option>North Dakota</option>
+                                                    <option>Ohio</option>
+                                                    <option>Oklahoma</option>
+                                                    <option>Oregon</option>
+                                                    <option>Pennsylvania</option>
+                                                    <option>Rhode Island</option>
+                                                    <option>South Carolina</option>
+                                                    <option>South Dakota</option>
+                                                    <option>Tennessee</option>
+                                                    <option>Texas</option>
+                                                    <option>Utah</option>
+                                                    <option>Vermont</option>
+                                                    <option>Virginia</option>
+                                                    <option>Washington</option>
+                                                    <option>West Virginia</option>
+                                                    <option>Wisconsin</option>
+                                                    <option>Wyoming</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <button type="submit" id="browseStateBtn" class="btn btn-primary btn-block">Search</button>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                
-                                
-                                
-                            </div>
-                            
-                            <div class="row">
-                                <div class="form-group">
-                                    <div class="row">
-                                        <h2>Search By State</h2><!-- SEARCH BY STATE TITLE -->
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <select id="browseStateOption" class="form-control">
-                                                <option>Alabama</option><option>Alaska</option><option>Arizona</option>
-                                                <option>Arkansas</option><option>California</option><option>Colorado</option>
-                                                <option>Connecticut</option><option>Delaware</option><option>Florida</option>
-                                                <option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option>
-                                            </select>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <h2>Browse Parks</h2>
                                         </div>
-                                        <div class="col-sm-6">
-                                            <button type="submit" id="browseStateBtn" class="btn btn-primary btn-block">Search</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row">
-                                        <h2>Browse Parks</h2>
-                                    </div>
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <select id="browseParkOption" class="form-control">
-                                                    <option id="parkOpt1">Acadia</option><option id="parkOpt2">American Samoa</option><option id="parkOpt3">Arches</option><option id="parkOpt4">Badlands</option><option id="parkOpt5">Big Bend</option><option id="parkOpt6">Biscayne</option><option id="parkOpt7">Black Canyon of the Gunnison</option><option id="parkOpt8">Bryce Canyon</option><option id="parkOpt9">Canyonlands</option><option id="parkOpt10">Capitol Reef</option><option id="parkOpt11">Carlsbad Caverns *</option><option id="parkOpt12">Channel Islands</option><option id="parkOpt13">Congaree</option><option id="parkOpt14">Crater Lake</option><option id="parkOpt15">Cuyahoga Valley</option><option id="parkOpt16">Death Valley</option><option id="parkOpt17">Denali</option><option id="parkOpt18">Dry Tortugas</option><option id="parkOpt19">Everglades</option><option id="parkOpt20">Gates of the Arctic</option><option id="parkOpt21">Gateway Arch</option><option id="parkOpt22">Glacier</option><option id="parkOpt23">Glacier Bay</option><option id="parkOpt24">Grand Canyon *</option><option id="parkOpt25">Grand Teton</option><option id="parkOpt26">Great Basin</option><option id="parkOpt27">Great Sand Dunes</option><option id="parkOpt28">Great Smoky Mountains</option><option id="parkOpt29">Guadalupe Mountains</option><option id="parkOpt30">Haleakalā</option><option id="parkOpt31">Hawaiʻi Volcanoes</option><option id="parkOpt32">Hot Springs</option><option id="parkOpt33">Isle Royale</option><option id="parkOpt34">Joshua Tree</option><option id="parkOpt35">Katmai</option><option id="parkOpt36">Kenai Fjords</option><option id="parkOpt37">Kings Canyon</option><option id="parkOpt38">Kobuk Valley</option><option id="parkOpt39">Lake Clark</option><option id="parkOpt40">Lassen Volcanic</option><option id="parkOpt41">Mammoth Cave</option><option id="parkOpt42">Mesa Verde*</option><option id="parkOpt43">Mount Rainier</option><option id="parkOpt44">North Cascades</option><option id="parkOpt45">Olympic</option><option id="parkOpt46">Petrified Forest</option><option id="parkOpt47">Pinnacles</option><option id="parkOpt48">Redwood *</option><option id="parkOpt49">Rocky Mountain</option><option id="parkOpt50">Saguaro</option><option id="parkOpt51">Sequoia</option><option id="parkOpt52">Shenandoah</option><option id="parkOpt53">Theodore Roosevelt</option><option id="parkOpt54">Virgin Islands</option><option id="parkOpt55">Voyageurs</option><option id="parkOpt56">Wind Cave</option><option id="parkOpt57">Wrangell–St. Elias *</option><option id="parkOpt58">Yellowstone</option><option id="parkOpt59">Yosemite *</option><option id="parkOpt60">Zion</option>
+                                                    <option id="parkOpt1">Acadia</option>
+                                                    <option id="parkOpt2">American Samoa</option>
+                                                    <option id="parkOpt3">Arches</option>
+                                                    <option id="parkOpt4">Badlands</option>
+                                                    <option id="parkOpt5">Big Bend</option>
+                                                    <option id="parkOpt6">Biscayne</option>
+                                                    <option id="parkOpt7">Black Canyon of the Gunnison</option>
+                                                    <option id="parkOpt8">Bryce Canyon</option>
+                                                    <option id="parkOpt9">Canyonlands</option>
+                                                    <option id="parkOpt10">Capitol Reef</option>
+                                                    <option id="parkOpt11">Carlsbad Caverns *</option>
+                                                    <option id="parkOpt12">Channel Islands</option>
+                                                    <option id="parkOpt13">Congaree</option>
+                                                    <option id="parkOpt14">Crater Lake</option>
+                                                    <option id="parkOpt15">Cuyahoga Valley</option>
+                                                    <option id="parkOpt16">Death Valley</option>
+                                                    <option id="parkOpt17">Denali</option>
+                                                    <option id="parkOpt18">Dry Tortugas</option>
+                                                    <option id="parkOpt19">Everglades</option>
+                                                    <option id="parkOpt20">Gates of the Arctic</option>
+                                                    <option id="parkOpt21">Gateway Arch</option>
+                                                    <option id="parkOpt22">Glacier</option>
+                                                    <option id="parkOpt23">Glacier Bay</option>
+                                                    <option id="parkOpt24">Grand Canyon *</option>
+                                                    <option id="parkOpt25">Grand Teton</option>
+                                                    <option id="parkOpt26">Great Basin</option>
+                                                    <option id="parkOpt27">Great Sand Dunes</option>
+                                                    <option id="parkOpt28">Great Smoky Mountains</option>
+                                                    <option id="parkOpt29">Guadalupe Mountains</option>
+                                                    <option id="parkOpt30">Haleakalā</option>
+                                                    <option id="parkOpt31">Hawaiʻi Volcanoes</option>
+                                                    <option id="parkOpt32">Hot Springs</option>
+                                                    <option id="parkOpt33">Isle Royale</option>
+                                                    <option id="parkOpt34">Joshua Tree</option>
+                                                    <option id="parkOpt35">Katmai</option>
+                                                    <option id="parkOpt36">Kenai Fjords</option>
+                                                    <option id="parkOpt37">Kings Canyon</option>
+                                                    <option id="parkOpt38">Kobuk Valley</option>
+                                                    <option id="parkOpt39">Lake Clark</option>
+                                                    <option id="parkOpt40">Lassen Volcanic</option>
+                                                    <option id="parkOpt41">Mammoth Cave</option>
+                                                    <option id="parkOpt42">Mesa Verde*</option>
+                                                    <option id="parkOpt43">Mount Rainier</option>
+                                                    <option id="parkOpt44">North Cascades</option>
+                                                    <option id="parkOpt45">Olympic</option>
+                                                    <option id="parkOpt46">Petrified Forest</option>
+                                                    <option id="parkOpt47">Pinnacles</option>
+                                                    <option id="parkOpt48">Redwood *</option>
+                                                    <option id="parkOpt49">Rocky Mountain</option>
+                                                    <option id="parkOpt50">Saguaro</option>
+                                                    <option id="parkOpt51">Sequoia</option>
+                                                    <option id="parkOpt52">Shenandoah</option>
+                                                    <option id="parkOpt53">Theodore Roosevelt</option>
+                                                    <option id="parkOpt54">Virgin Islands</option>
+                                                    <option id="parkOpt55">Voyageurs</option>
+                                                    <option id="parkOpt56">Wind Cave</option>
+                                                    <option id="parkOpt57">Wrangell–St. Elias *</option>
+                                                    <option id="parkOpt58">Yellowstone</option>
+                                                    <option id="parkOpt59">Yosemite *</option>
+                                                    <option id="parkOpt60">Zion</option>
                                                 </select>
                                             </div>
                                             <div class="col-sm-6">
                                                 <button type="submit" id="browseParkBtn" class="btn btn-primary btn-block">Search</button>
                                             </div>
                                         </div>
-                                </div>
-                                
-                                <!-- SEARCH AND RANDOM PARK BUTTONS -->
-                                        <div class="form-group">
-                                            <div class="row">
-                                                <h2>Pick A Random Park</h2>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <button type="submit" id="randomParkBtn" class="btn btn-primary btn-block">Pick A Random Park</button>
-                                                </div>
-                                            </div>
-                                        
-                                    
-                                </div>
-                            </div>
-                        </form><!-- /form -->
+                                    </div>
 
-<!-- FACEBOOK FEED WIDGET - PROBABLY GOING TO PULL THE FEED IN A DIFFERENT WAY -->
-            <!-- <div class='sk-ww-facebook-feed' data-embed-id='8275'></div>
+                                    <!-- SEARCH AND RANDOM PARK BUTTONS -->
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <h2>Pick A Random Park</h2>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <button type="submit" id="randomParkBtn" class="btn btn-primary btn-block">Pick A Random Park</button>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- /form -->
+
+                            <!-- FACEBOOK FEED WIDGET - PROBABLY GOING TO PULL THE FEED IN A DIFFERENT WAY -->
+                            <!-- <div class='sk-ww-facebook-feed' data-embed-id='8275'></div>
             <script src='https://www.sociablekit.com/app/embed/facebook-feed/widget.js'></script> -->
-                
-<!-- TWITTER FEED WIDGET - NOT DONE YET -->
+
+                            <!-- TWITTER FEED WIDGET - NOT DONE YET -->
 
 
-                    </div><!-- end col -->
-                </div><!-- end row -->
-            </div><!-- end col-sm-7/dynamic content section -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        
-
-
-
-
-<!-- FOOTER -->
-<div class="container">
-    <div class="row">
-        <div class="col-sm-9">
-            <footer id="footer">
-                &copy; 2018 Team JSON & The VARgonauts UNC Coding Bootcamp
-            </footer>
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+                </div>
+                <!-- end col-sm-7/dynamic content section -->
+            </div>
+            <!-- end row -->
         </div>
-    </div>
-</div>
+        <!-- end container -->
 
-<!-- <script src="assets/javascript/mapsinterface.js"></script> -->
-<script src="assets/javascript/nps.js"></script>
-<script src="assets/javascript/main.js"></script>
-<script src="assets/javascript/bizlogic.js"></script>
-<script src="assets/javascript/packery.pkgd.min.js"></script>
-<!-- <script src="assets/javascript/packery.pkgd.min.js"></script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- FOOTER -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <footer id="footer">
+                        &copy; 2018 Team JSON & The VARgonauts UNC Coding Bootcamp
+                    </footer>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    
+        <script
+        src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+        crossorigin="anonymous"></script>
+    
+        <script src="https://unpkg.com/packery@2/dist/packery.pkgd.js"></script>
+        
+        <!-- <script src="assets/javascript/mapsinterface.js"></script> -->
+        <script src="assets/javascript/nps.js"></script>
+        <script src="assets/javascript/main.js"></script>
+        <script src="assets/javascript/bizlogic.js"></script>
 </body>
 
 </html>
