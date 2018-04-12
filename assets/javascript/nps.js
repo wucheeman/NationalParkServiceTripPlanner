@@ -22,13 +22,9 @@ $(document).ready(function () {
     var queryQRL = "https://developer.nps.gov/api/v1/parks?parkCode=" + selectedCode + "&api_key=7wQNlZMqMhlH0js2AdSZsiMoge4n3Z0ud2rZVlfW";
     console.log(queryQRL);
     //  
-    var pickRandom = function randomSelect() {
-      for (var i = 0; i < parkcodes.length; i++) {
-        var randomSelect = Math.floor(Math.random() * 60);
-        var selectedCode = parkCodes[randomSelect]
-        var selectedCode = parkCodes[randomSelect]
-      }
-    }
+    var pickRandom = parkCodes[Math.floor(Math.random() * parkCodes.length)];
+    console.log(pickRandom);
+   
     $.ajax({
       url: "https://developer.nps.gov/api/v1/parks?parkCode=" + selectedCode + "&api_key=7wQNlZMqMhlH0js2AdSZsiMoge4n3Z0ud2rZVlfW",
       method: "GET"
