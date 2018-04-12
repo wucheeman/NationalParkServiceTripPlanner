@@ -51,14 +51,14 @@ $(document).ready(function () {
     console.log(selectedState);
    
    // stateCode object
-    var stateCodeObject = {
-      "Alabama": AL, "Alaska": AK, "Arizona": AZ, "Arkansa": AR, "California": CA, "Colorado": CO, "Conneticut": CT, "Delaware": DE, "Florida": FL, "Georgia": GA, "Hawaii": HI, "Idaho": ID, "Illinois": IL, "Indiana": IN, "Iowa": IA, "Kansas": KS, "Kentucky": KY, "Louisiana": LA, "Maine": ME, "Maryland": MD, "Massachusetts": MA, "Michigan": MI, "Minnesota": MN, "Mississippi": MS, "Missouri": MO, "Montana": MT, "Nebraska": NE, "Nevada": NV, "New Hampshire": NH, "New Jersey": NJ, "New Mexico": NM, "New York": NY, "North Carolina": NC, "North Dakota": ND, "Ohio": OH, "Oklahoma": OK, "Oregon": OR, "Pennsylvania": PA, "Rhode Island": RI, "South Carolina": SC, "South Dakota": SD, "Tennessee": TN, "Texas": TX, "Utah": UT, "Vermont": VT, "Virginia": VA, "Washington": WA, "West Virginia": WV, "Wisconson": WI, "Wyoming": WY
-    }
+    // var stateCodeObject = {
+    //   "Alabama": AL, "Alaska": AK, "Arizona": AZ, "Arkansa": AR, "California": CA, "Colorado": CO, "Conneticut": CT, "Delaware": DE, "Florida": FL, "Georgia": GA, "Hawaii": HI, "Idaho": ID, "Illinois": IL, "Indiana": IN, "Iowa": IA, "Kansas": KS, "Kentucky": KY, "Louisiana": LA, "Maine": ME, "Maryland": MD, "Massachusetts": MA, "Michigan": MI, "Minnesota": MN, "Mississippi": MS, "Missouri": MO, "Montana": MT, "Nebraska": NE, "Nevada": NV, "New Hampshire": NH, "New Jersey": NJ, "New Mexico": NM, "New York": NY, "North Carolina": NC, "North Dakota": ND, "Ohio": OH, "Oklahoma": OK, "Oregon": OR, "Pennsylvania": PA, "Rhode Island": RI, "South Carolina": SC, "South Dakota": SD, "Tennessee": TN, "Texas": TX, "Utah": UT, "Vermont": VT, "Virginia": VA, "Washington": WA, "West Virginia": WV, "Wisconson": WI, "Wyoming": WY
+    // }
 
-    // API QUERY FOR STATE CODES FROM NPS
-    var queryQRL = "https://developer.nps.gov/api/v1/parks?="+selectedState + "&api_key=7wQNlZMqMhlH0js2AdSZsiMoge4n3Z0ud2rZVlfW"
-    //console.log of API Query
-    console.log(queryQRL);
+    // // API QUERY FOR STATE CODES FROM NPS
+     var queryQRL = "https://developer.nps.gov/api/v1/parks?="+selectedState + "&api_key=7wQNlZMqMhlH0js2AdSZsiMoge4n3Z0ud2rZVlfW"
+    // //console.log of API Query
+     console.log(queryQRL);
   });
 
   // ("#browseParkBtn").on("click", function (event) {
