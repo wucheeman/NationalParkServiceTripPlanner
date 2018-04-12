@@ -19,9 +19,9 @@ Procedure
 
 	$ git checkout -b <branch name>
 
-If you are doing this from the command line, this will move you into the new branch directory. Open VS code with
+If you are doing this from the command line, this will move you into the new branch directory. Open VS Code (either Mac or Windows) with:
 
-	$ code . (Mac/Windows)
+	$ code . 
 	
 In VS Code, look in the lower left corner of the window to verify that you are working on the branch.
 	
