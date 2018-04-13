@@ -3,41 +3,6 @@ $( document ).ready(function() {
   dbInterface.initializeDB();
   $(document).on('click', clickHandler);
 
-
-// TODO: add this event handler as a separate function
-const captureProfileData = () => {
-  // THIS EXISTS
-  $("#submitGoFire").on("click", function(event) {
-  event.preventDefault();
-  // Grabbed values from text boxes
-  name = $("#firstName").val().trim();
-  email = $("#email").val().trim();
-  password1 = $("#password1").val().trim();
-  password2 = $("#password2").val().trim(); 
-  // TODO: let's not do this because it requires separate validation  
-  // birthDate = $("#birthDate").val().trim();
-  // THIS IS NEW
-  const validPassword = validatePassword(password1, password2);
-  if (validPassword) {
-    databaseInterface.createNewUser(name, email, password, birthdate);
-  } else {
-    console.log('passwords do not match');
-    // TODO: alert user to try again
-}
-  })
-}
-
-
-const validatePassword = (password1, password2) => {
-  ('password is valid');
-    return true;if (password1 === password2) {
-    console.log
-  } else {
-    console.log('password is NOT valid');
-    return false;
-  }
-}
-
 function LoadFbSDK (d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -105,10 +70,64 @@ const clickHandler = (e) => {
       emptyNPS();
       getAndDisplayDirections();
       break;
+    case 'createAccount':
+      console.log('user wants to create account');
+      clearIt();
+      makeRegistrationForm();
+      break;
+    case 'submitProfile':
+      console.log('user submitted profile info');
+      if (captureProfileData(event)) {
+        clearIt();
+        thankYouForJoining();
+        setTimeout(() => {
+          clearIt();
+        }, 3000);
+      } else {
+        clearIt();
+        pleaseTryAgain();
+        setTimeout(() => {
+          clearIt();
+        }, 2000);
+        setTimeout(() => {
+          makeRegistrationForm();
+        }, 3500);
+      }
+      break;
     default:
       console.log('user clicked in unsupported region');
   }
 }
 
+// TODO: add this event handler as a separate function
+const captureProfileData = (e) => {
+  // $("#submitGoFire").on("click", function(event) {
+  event.preventDefault();
+  // Grabbed values from text boxes
+  let email = $("#email").val().trim();
+  let name = $("#name").val().trim();
+  let password1 = $("#pwd1").val().trim();
+  let password2 = $("#pwd2").val().trim();
+  console.log(email, name, password1, password2);
+  const validPassword = validatePassword(password1, password2);
+  if (validPassword) {
+    console.log('passwords match');
+    dbInterface.createNewUser(name, email, password1);
+    return true;
+  } else {
+    console.log('passwords do not match');
+    return false;
+  }
+}
 
-// 
+
+const validatePassword = (password1, password2) => {
+  console.log('in validatePassword');
+    if (password1 === password2) {
+      console.log ('password is valid');
+      return true;
+  } else {
+    console.log('password is NOT valid');
+    return false;
+  }
+}
