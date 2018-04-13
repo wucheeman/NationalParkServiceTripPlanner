@@ -1,9 +1,10 @@
+// GLOBAL VARIABLES
+//==================
+let selectedParkName;
+
+// CODE
+// ========================================================================
 $(document).ready(function () {
-
-
-
-
-
   //Click Handler for Random Park Search
   $("#randomParkBtn").on("click", function (event) {
     console.log("click handler working");
@@ -22,13 +23,9 @@ $(document).ready(function () {
     var queryQRL = "https://developer.nps.gov/api/v1/parks?parkCode=" + selectedCode + "&api_key=7wQNlZMqMhlH0js2AdSZsiMoge4n3Z0ud2rZVlfW";
     console.log(queryQRL);
     //  
-    var pickRandom = function randomSelect() {
-      for (var i = 0; i < parkcodes.length; i++) {
-        var randomSelect = Math.floor(Math.random() * 60);
-        var selectedCode = parkCodes[randomSelect]
-        var selectedCode = parkCodes[randomSelect]
-      }
-    }
+    var pickRandom = parkCodes[Math.floor(Math.random() * parkCodes.length)];
+    console.log(pickRandom);
+   
     $.ajax({
       url: "https://developer.nps.gov/api/v1/parks?parkCode=" + selectedCode + "&api_key=7wQNlZMqMhlH0js2AdSZsiMoge4n3Z0ud2rZVlfW",
       method: "GET"
@@ -125,7 +122,23 @@ $(document).ready(function () {
       $('#insertParkInfoHere').append('<h3 id="responseTitle">' + "Weather: " + '</h3><span id="responseInfo">' + response.data[0].weatherInfo + '</span>');
     })
   });
+});
 
+const emptyNPS = () => {
+  console.log('in emptyNPS');
+  $('#insertSearchFormhere').empty();
+  $('#insertParkInfoHere').empty();
+}
+
+
+  // ("#browseParkBtn").on("click", function (event) {
+  //   event.preventDefault();
+  //   $('#insertGooglehere').empty();
+  //   var place = $('#browseParkOption').val().trim();
+  //   console.log(place);
+  //  // $('#insertGooglehere').append(' <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCESN4bg_XY8N82CwU7ssef7snFR53K1rY&q=' + place + '" allowfullscreen></iframe >')
+
+  // });
 
 
 
@@ -231,4 +244,3 @@ $(document).ready(function () {
   //     parkOpt1, parkOpt2, parkOpt3, parkOpt4, parkOpt5, parkOpt6, parkOpt7, parkOpt8, parkOpt9, parkOpt10, parkOpt11, parkOpt12, parkOpt13, parkOpt14, parkOpt15, parkOpt16, parkOpt17, parkOpt18, parkOpt19, parkOpt20, parkOpt21, parkOpt22, parkOpt23, parkOpt24, parkOpt25, parkOpt26, parkOpt27, parkOpt28, parkOpt29, parkOpt30, parkOpt31, parkOpt32, parkOpt33, parkOpt34, parkOpt35, parkOpt36, parkOpt37, parkOpt38, parkOpt39, parkOpt40, parkOpt41, parkOpt42, parkOpt43, parkOpt44, parkOpt45, parkOpt46, parkOpt47, parkOpt48, parkOpt49, parkOpt50, parkOpt51, parkOpt52, parkOpt53, parkOpt54, parkOpt55, parkOpt56, parkOpt57, parkOpt58, parkOpt59, parkOpt60]
 
 
-});

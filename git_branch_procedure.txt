@@ -25,7 +25,7 @@ If you are doing this from the command line, this will move you into the new bra
 	
 In VS Code, look in the lower left corner of the window to verify that you are working on the branch.
 	
-2. Develop your code, and add and commit as usual.
+2. Develop your code, and add and commit as usual. You won't be able to push up to the master repo.
 
 3. When you complete your task, push it up to master/origin at GitHub with:
 
