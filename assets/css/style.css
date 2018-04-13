@@ -108,15 +108,16 @@ font-family: 'Playfair Display', serif; */
 /* ---- grid ---- */
 
 .grid {
-  max-width: 500px;
+  /* width: 500px; */
+  height: 500px;
 }
 
 /* clear fix */
-.grid:after {
+/* .grid:after {
   content: '';
   display: block;
   clear: both;
-}
+} */
 
 /* ---- .grid-item ---- */
 
@@ -138,7 +139,7 @@ font-family: 'Playfair Display', serif; */
 .grid-item.ui-draggable-dragging,
 .grid-item.is-positioning-post-drag {
   background: #C90;
-  z-index: 2;
+  z-index: 0;
 }
 
 .packery-drop-placeholder {
@@ -164,4 +165,13 @@ font-family: 'Playfair Display', serif; */
   padding: 15px;
   border: 2px solid #492202;
   border-radius: 10px;
+
+  min-height: 425px;
+}
+
+.api-call {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+
 }
