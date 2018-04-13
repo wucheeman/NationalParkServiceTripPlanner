@@ -112,7 +112,7 @@ const checkPassword = (email, password) => {
 }
 
 const clickHandler = (e) => {
-    console.log('in clickHandler');
+  console.log('in clickHandler');
   const clickTarget = e.target.id;
   let message;
   switch (clickTarget) {
@@ -127,9 +127,16 @@ const clickHandler = (e) => {
       let userPassword = $("#pwd").val().trim();
       checkPassword(userEmail, userPassword);
       break;
+    case 'getDirections':
+      console.log('user wants directions to a park');
+      //event.preventDefault;
+      emptyNPS();
+      getAndDisplayDirections();
+      break;
     default:
       console.log('user clicked in unsupported region');
   }
 }
 
 
+// 
