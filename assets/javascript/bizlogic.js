@@ -38,34 +38,6 @@ const validatePassword = (password1, password2) => {
   }
 }
 
-const checkPassword = (email, password) => {
-  // Authorizes access to NPS Connect as a user
-    console.log('in checkPasswordTwo');
-    let storedPassword;
-    const processedUserEmail = dbInterface.processUserEmail(email);
-    // retrieve password using email as key
-    dbInterface.database.ref().child(processedUserEmail).on("value", function(snapshot) {
-      setTimeout(() => {
-        if (snapshot.val() === null) {
-          console.log('no such email in DB');
-          // TODO call new function to ask user to enter correct email
-        }
-        storedPassword = snapshot.val().password;
-        console.log('stored password is ' + storedPassword);
-        if (password === storedPassword ) {
-          console.log('password is good');
-          // TODO let user proceed to NPS Connect
-        } else {
-          console.log('password is NO good');
-          // TODO ask user to enter password again
-        }
-      }, 1000);
-    }, function(errorObject) {
-      console.log("The read failed: " + errorObject.code);
-    });
-}
-
-
 function LoadFbSDK (d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
