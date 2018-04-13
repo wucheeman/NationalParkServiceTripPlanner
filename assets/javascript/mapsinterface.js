@@ -30,6 +30,23 @@ $("#hotelBtn").on("click", function (event) {
     $('#insertGooglehere').append(' <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCESN4bg_XY8N82CwU7ssef7snFR53K1rY&q=' + place + '" allowfullscreen></iframe >')
 });
 
+//gas
+$("#gasBtn").on("click", function (event) {
+    event.preventDefault();
+    $('#insertGooglehere').empty();
+    var place = $('#browseParkOption').val().trim() + 'national park gas';
+    console.log(place);
+    $('#insertGooglehere').append(' <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCESN4bg_XY8N82CwU7ssef7snFR53K1rY&q=' + place + '" allowfullscreen></iframe >')
+});
+
+//sporting goods
+$("#sportBtn").on("click", function (event) {
+    event.preventDefault();
+    $('#insertGooglehere').empty();
+    var place = $('#browseParkOption').val().trim() + 'national park sporting goods';
+    console.log(place);
+    $('#insertGooglehere').append(' <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCESN4bg_XY8N82CwU7ssef7snFR53K1rY&q=' + place + '" allowfullscreen></iframe >')
+});
 
 //randomPark get array and randomizaton
 $("#randomParkBtn").on("click", function (event) {
