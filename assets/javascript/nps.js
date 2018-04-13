@@ -1,9 +1,11 @@
+
+// GLOBAL VARIABLES
+//==================
+let selectedParkName;
+
+// CODE
+// ========================================================================
 $(document).ready(function () {
-
-
-  
-
-
   //Click Handler for Random Park Search
   $("#randomParkBtn").on("click", function (event) {
     console.log("click handler working");
@@ -31,6 +33,8 @@ $(document).ready(function () {
     }).done(function (response) {
       console.log('response.data[0]', response.data[0]);
       $('#insertParkInfoHere').empty();
+      selectedParkName = response.data[0].fullName;
+      console.log('the random park is: ' + selectedParkName );
       $('#insertParkInfoHere').append('<h2 id="responseTitle">' + "Name of National Park: " + '</h2><span id="responseInfo">' + response.data[0].fullName + '</span>');
       $('#insertParkInfoHere').append('<h2 id="responseTitle">' + "Location: " + '</h2><span id="responseInfo">' + response.data[0].states + '</span>');
       $('#insertParkInfoHere').append('<h2 id="responseTitle">' + "Latitude & Longitude: " + '</h2><span id="responseInfo">' + response.data[0].latLong + '</span>');
@@ -38,7 +42,6 @@ $(document).ready(function () {
       $('#insertParkInfoHere').append('<h2 id="responseTitle">' + "Weather: " + '</h2><span id="responseInfo">' + response.data[0].weatherInfo + '</span>');
     });
   });
-
 
 
   $("#browseStateBtn").on("click", function (event) {
@@ -57,6 +60,14 @@ $(document).ready(function () {
     //console.log of API Query
     console.log(queryQRL);
   });
+});
+
+const emptyNPS = () => {
+  console.log('in emptyNPS');
+  $('#insertSearchFormhere').empty();
+  $('#insertParkInfoHere').empty();
+}
+
 
 
 //     // API Query
@@ -127,4 +138,3 @@ $(document).ready(function () {
 //     parkOpt1, parkOpt2, parkOpt3, parkOpt4, parkOpt5, parkOpt6, parkOpt7, parkOpt8, parkOpt9, parkOpt10, parkOpt11, parkOpt12, parkOpt13, parkOpt14, parkOpt15, parkOpt16, parkOpt17, parkOpt18, parkOpt19, parkOpt20, parkOpt21, parkOpt22, parkOpt23, parkOpt24, parkOpt25, parkOpt26, parkOpt27, parkOpt28, parkOpt29, parkOpt30, parkOpt31, parkOpt32, parkOpt33, parkOpt34, parkOpt35, parkOpt36, parkOpt37, parkOpt38, parkOpt39, parkOpt40, parkOpt41, parkOpt42, parkOpt43, parkOpt44, parkOpt45, parkOpt46, parkOpt47, parkOpt48, parkOpt49, parkOpt50, parkOpt51, parkOpt52, parkOpt53, parkOpt54, parkOpt55, parkOpt56, parkOpt57, parkOpt58, parkOpt59, parkOpt60]
 
 
-});
