@@ -1,7 +1,5 @@
 // dbif.js
 
-// Need this in index.html
-// <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 
 const dbInterface = {
   // provides single interface to Firebase
@@ -9,8 +7,6 @@ const dbInterface = {
   name: '',
   email: '',
   password: '',
-  // TODO: is this really needed?
-  // birthDate:"",
   initializeDB: function () {
     // initializes database at start of planning session
     console.log('in dbInterface.initializeDB()');
@@ -26,7 +22,7 @@ const dbInterface = {
     this.database = firebase.database();
   },
   createNewUser(userName, userEmail, userPassword) {
-    // userBirthDate is omitted for now
+    // TODO (future) return success or failure
     console.log('in dbInterface.createNewUser');
     const processedUserEmail = this.processUserEmail(userEmail);
     // console.log('processedUserEmail is ' + processedUserEmail);
@@ -72,76 +68,3 @@ const dbInterface = {
     // returns 'success' if successful or 'failed' if not
   }
 }
-
-/* code for Anthony
-
-// TODO: firebase stack for submit form. ("#SubmitGoFire").on
-// should be changed to the id we go with once the front end is cleaned.
-
-// TODO: add this event handler as a separate function
-const captureProfileData = () => {
-  // THIS EXISTS
-  $("#submitGoFire").on("click", function(event) {
-  event.preventDefault();
-  // Grabbed values from text boxes
-  name = $("#firstName").val().trim();
-  email = $("#email").val().trim();
-  password1 = $("#password1").val().trim();
-  password2 = $("#password2").val().trim(); 
-  // TODO: let's not do this because it requires separate validation  
-  birthDate = $("#birthDate").val().trim();
-  // THIS IS NEW
-  const validPassword = validatePassword(password1, password2);
-  if (validPassword) {
-    databaseInterface.createNewUser(name, email, password, birthdate);
-  } else {
-    console.log('passwords do not match');
-    // TODO: alert user to try again
-  }
-}
-
-// TODO: add this function to be run after user has submitted profile
-const validatePassword = (password1, password2) => {
-  if (password1 === password2) {
-    console.log('password is valid');
-    return true;
-  } else {
-    console.log('password is NOT valid');
-    return false;
-  }
-}
-
-// TODO: run this function when user has submitted password to log in
-    const checkPassword = (email, password) => {
-    // Authorizes access to NPS Connect as a user
-      console.log('in checkPasswordTwo');
-      let storedPassword;
-      const processedUserEmail = dbInterface.processUserEmail(email);
-      // retrieve password using email as key
-      dbInterface.database.ref().child(processedUserEmail).on("value", function(snapshot) {
-        setTimeout(() => {
-          if (snapshot.val() === null) {
-            console.log('no such email in DB');
-            // TODO call new function to ask user to enter correct email
-          }
-          storedPassword = snapshot.val().password;
-          console.log('stored password is ' + storedPassword);
-          if (password === storedPassword ) {
-            console.log('password is good');
-            // TODO let user proceed to NPS Connect
-          } else {
-            console.log('password is NO good');
-            // TODO ask user to enter password again
-          }
-        }, 1000);
-      }, function(errorObject) {
-        console.log("The read failed: " + errorObject.code);
-      });
-  }
-
-
-// TODO: add this to a function that is run at startup
-dbInterface.initializeDB();
-
-
-*/
