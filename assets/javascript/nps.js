@@ -42,6 +42,7 @@ $(document).ready(function () {
       $('#insertParkInfoHere').append('<p id="responseTitle">' + "Location: " + '</p><p id="responseInfo">' + response.data[0].states + '</p>');
       $('#insertParkInfoHere').append('<p id="responseTitle">' + "Latitude & Longitude: " + '</p><p id="responseInfo">' + response.data[0].latLong + '</p>');
       $('#insertParkInfoHere').append('<p id="responseTitle">' + "Weather: " + '</p><p id="responseInfo">' + response.data[0].weatherInfo + '</p>');
+      selectedParkName = response.data[0].fullName;
     });
   });
 

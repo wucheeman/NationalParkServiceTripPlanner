@@ -10,24 +10,18 @@ const getAndDisplayDirections = () => {
 }
 
 
-// directions--adding this in got the map to work with the button click.
-// ========================================================================
-$("#directionsBtn").on("click", function (event) {
+
+
+//hotels
+$("#hotelBtn").on("click", function (event) {
     event.preventDefault();
-    emptyNPS();
-    var place = $('#browseParkOption').val().trim() + 'national park gas';
-    $('#insertGooglehere').append(' <iframe width="580" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCESN4bg_XY8N82CwU7ssef7snFR53K1rY&q=' + selectedParkName + '" allowfullscreen></iframe >')
+    $('#insertGooglehere').empty();
+    // emptyNPS();
+    //  var place = $('#browseParkOption').val().trim() + 'national park hotel';
+    var place = selectedParkName + 'national park hotel';
+    console.log(place);
+    $('#insertGooglehere').append(' <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCESN4bg_XY8N82CwU7ssef7snFR53K1rY&q=' + place + '" allowfullscreen></iframe >')
 });
-
-
-// //hotels
-// $("#hotelBtn").on("click", function (event) {
-//     event.preventDefault();
-//     $('#insertGooglehere').empty();
-//     var place = $('#browseParkOption').val().trim() + 'national park hotel';
-//     console.log(place);
-//     $('#insertGooglehere').append(' <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCESN4bg_XY8N82CwU7ssef7snFR53K1rY&q=' + place + '" allowfullscreen></iframe >')
-// });
 
 
 // gas on(click)
@@ -35,7 +29,8 @@ $("#directionsBtn").on("click", function (event) {
 $("#gasBtn").on("click", function (event) {
     event.preventDefault();
     emptyNPS();
-    var place = $('#browseParkOption').val().trim() + 'national park gas';
+    // var place = $('#browseParkOption').val().trim() + 'national park gas';
+    var place = selectedParkName + 'national park gas';
     console.log(place);
     $('#insertGooglehere').append(' <iframe width="580" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCESN4bg_XY8N82CwU7ssef7snFR53K1rY&q=' + place + '" allowfullscreen></iframe >')
 });
@@ -46,7 +41,8 @@ $("#gasBtn").on("click", function (event) {
 $("#sportBtn").on("click", function (event) {
     event.preventDefault();
     emptyNPS();
-    var place = $('#browseParkOption').val().trim() + 'national park sporting goods';
+    // var place = $('#browseParkOption').val().trim() + 'national park sporting goods';
+    var place = selectedParkName + 'national park sporting goods';
     console.log(place);
     $('#insertGooglehere').append(' <iframe width="580" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCESN4bg_XY8N82CwU7ssef7snFR53K1rY&q=' + place + '" allowfullscreen></iframe >')
 });

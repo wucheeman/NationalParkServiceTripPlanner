@@ -74,13 +74,13 @@ const clickHandler = (e) => {
       let userPassword = $("#pwd").val().trim();
       checkPassword(userEmail, userPassword);
       break;
-    case 'getDirections':
+    case 'directionsBtn':
       console.log('user wants directions to a park');
       //event.preventDefault;
       emptyNPS();
       getAndDisplayDirections();
       break;
-    case 'createAccount':
+    case 'register':
       console.log('user wants to create account');
       clearIt();
       makeRegistrationForm();
