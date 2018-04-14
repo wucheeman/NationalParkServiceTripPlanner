@@ -246,32 +246,55 @@ color: #c5a56d
   padding: 15px;
   border: 2px solid #492202;
   border-radius: 10px;
+  min-height: 400px;   
+  /* overflow-y : scroll; */
 }
 
-#dynamicContent::-webkit-scrollbar {
+.box-content{
+  min-height: 400px;    
+}
+/* width */
+.box-content::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+.box-content::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+/* Handle */
+.box-content::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+/* Handle on hover */
+.box-content::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+/* .box-content {
+  height: 390px;
+  overflow: auto;
+  border-radius: 8px;
+} */
+/* #dynamicContent::-webkit-scrollbar {
     width: 20px;
 }
-
 #dynamicContent::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
     border-radius: 10px;
 }
-
 #dynamicContent::-webkit-scrollbar-thumb {
     background: #333;
     border-radius: 10px;
 }
-
 #dynamicContent::-webkit-scrollbar-thumb:hover  {
     background: #333;
-}
+} */
 
 
 .api-call {
   cursor: pointer;
   color: #492202;
   text-decoration: underline;
-
 }
 
 .nav-link {
