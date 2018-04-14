@@ -64,14 +64,58 @@ transition: background-color 0.5s ease;
   background-color: #723707;
   }
 #login {
+  background-color: #492202;
+  transition: background-color 0.5s ease;
+  border: 0px;
+  color: white;
+}
+.nav-link {
+  background-color: #492202;
+  transition: background-color 0.5s ease;
+  border: 0px;
+  color: white;
+}
+#requestAuth {
   margin-top: 30px;
   margin-right: 30px;
   background-color: #492202;
   transition: background-color 0.5s ease;
+  border: 0px;
+  color: white;
 }
-#login:hover {
+#requestAuth:hover {
   background-color: #723707;
-  }
+}
+#browseStateBtn {
+
+  background-color: #492202;
+  transition: background-color 0.5s ease;
+  border: 0px;
+  color: white;
+}
+#browseStateBtn:hover {
+  background-color: #723707;
+}
+#browseParkBtn {
+
+  background-color: #492202;
+  transition: background-color 0.5s ease;
+  border: 0px;
+  color: white;
+}
+#browseParkBtn:hover {
+  background-color: #723707;
+}
+#randomParkBtn {
+
+  background-color: #492202;
+  transition: background-color 0.5s ease;
+  border: 0px;
+  color: white;
+}
+#randomParkBtn:hover {
+  background-color: #723707;
+}
 
 #footer {
   font-size: 20px;
@@ -108,8 +152,19 @@ font-family: 'Playfair Display', serif; */
 /* ---- grid ---- */
 
 .grid {
-  /* width: 500px; */
-  height: 500px;
+  width: 500px;
+  height: 100px;
+}
+.fb-share-button {
+  display: inline-block;
+}
+#menu {
+  width: 100%;
+  border-radius: 10px;
+  background-color: #492202;
+  color: white;
+  margin-bottom: 15px;
+
 }
 
 /* clear fix */
@@ -121,18 +176,27 @@ font-family: 'Playfair Display', serif; */
 
 /* ---- .grid-item ---- */
 
+.gutter-sizer { width: 4.5%; }
+.grid-sizer { width: 50%; }
+
+
 .grid-item {
   float: left;
   width: 200px;
   height: 200px;
-  border: 2px solid hsla(0, 0%, 0%, 0.5);
+  border: 2px solid #492202;
+  border-radius: 10px;
+}
+
+#navBar {
+  background-color: #492202;
 }
 
 .grid-item--width2 { width: 200px; }
 .grid-item--height2 { height: 200px; }
 
 .grid-item:hover {
-  border-color: hsla(0, 0%, 100%, 0.5);
+  border-color: #723707;
   cursor: move;
 }
 
@@ -143,35 +207,62 @@ font-family: 'Playfair Display', serif; */
 }
 
 .packery-drop-placeholder {
-  outline: 3px dashed hsla(0, 0%, 0%, 0.5);
+  border-radius: 10px;
+  outline: 3px dashed #492202;
   outline-offset: -6px;
   -webkit-transition: -webkit-transform 0.2s;
           transition: transform 0.2s;
+  
 }
 
-#responseTitles {
+.responseTitle {
   color: #492202;
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 25px;
 }
 
-#responseInfo {
+.responseInfo {
   color: #492202;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 16px;
 }
 
-#insertParkInfoHere {
+
+#dynamicContent {
   background-color: #c5a56d;
   color: #492202;
   padding: 15px;
   border: 2px solid #492202;
   border-radius: 10px;
-
-  min-height: 425px;
 }
+
+#dynamicContent::-webkit-scrollbar {
+    width: 20px;
+}
+
+#dynamicContent::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+#dynamicContent::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+}
+
+#dynamicContent::-webkit-scrollbar-thumb:hover  {
+    background: #333;
+}
+
 
 .api-call {
   cursor: pointer;
-  color: blue;
+  color: #492202;
   text-decoration: underline;
 
+}
+
+.nav-link {
+  color: white;
+  text-decoration-style: solid;
 }

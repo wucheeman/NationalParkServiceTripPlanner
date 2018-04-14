@@ -49,24 +49,75 @@
                             </div>
                         </div>
                         <div class="row">
-                            <button type="submit" id="login" class="btn btn-primary btn-block">Login</button>
+                            <div class="col-sm-6">
+                                <!-- FACEBOOK SHARE -->
+                                <div class="fb-share-button" data-href="https://www.facebook.com/nationalparkservice/?ref=br_rs" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Fnationalparkservice%2F%3Fref%3Dbr_rs&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+                                <!-- END OF FACEBOOK SHARE SECTION -->
+                            </div>
+                            <div class="col-sm-6">
+                                <!-- TWITTER SHARE -->
+
+                                <!-- END OF TWITTER SHARE SECTION -->
+                            </div>
+
+
+
+
+
+
+
+
+
+
+                            
+
+
+
+
+
+
+
+
+
+
                         </div>
-                        <div class="row">
-                            <button type="submit" id="createAccount" class="btn btn-primary btn-block">Create Account</button>
-                        </div>
-                        
                     </div>
                 </div>
                 <!-- END OF LOGIN/GUEST ACCESS SECTION -->
-                <!-- FACEBOOK SHARE -->
-                <div class="fb-share-button" data-href="https://www.facebook.com/nationalparkservice/?ref=br_rs" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Fnationalparkservice%2F%3Fref%3Dbr_rs&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
-                <!-- END OF FACEBOOK SHARE SECTION -->
-                <!-- TWITTER SHARE -->
-
-                <!-- END OF TWITTER SHARE SECTION -->
+                
 
 
             </div>
+        </div>
+        <div class="row">
+
+
+
+            <nav class="navbar navbar-expand-lg navbar-dark text-white style="background-color: #492202;"" id="menu">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" id="register" href="#">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" id="login" href="#">Login</a>
+                        </li>
+                      </ul>
+                      
+                    </div>
+                  </nav>
+
+
+
+
+
+
+
+
+
         </div>
         <!-- END OF HEADER/LOGO SECTION -->
 
@@ -79,65 +130,70 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-7">
-                    <!-- GOOGLE IFRAME GOES HERE -->
-                    <div id="insertGooglehere"></div>
-                    <!-- END OF GOOGLE IFRAME HERE -->
-                    <!-- LOGIN GOES HERE -->
-                    <div id="loginPrompt"></div>
-                    <!-- END OF LOGIN HERE -->
-                    <!-- SEARCH GOES HERE -->
-                    <div id="insertSearchFormhere"></div>
-                    <!-- END OF SEARCH HERE -->
+                    <div id="dynamicContent">
+                        <!-- GOOGLE IFRAME GOES HERE -->
+                        <div id="insertGooglehere"></div>
+                        <!-- END OF GOOGLE IFRAME HERE -->
+                        <!-- LOGIN GOES HERE -->
+                        <div id="loginPrompt"></div>
+                        <!-- END OF LOGIN HERE -->
+                        <!-- SEARCH GOES HERE -->
+                        <div id="insertSearchFormhere"></div>
+                        <!-- END OF SEARCH HERE -->
 
-                    <!-- REGISTRATION GOES HERE -->
-                    <div id="insertRegistrationhere"></div>
-                    <!-- END OF REGISTRATION HERE -->
+                        <!-- REGISTRATION GOES HERE -->
+                        <div id="insertRegistrationhere"></div>
+                        <!-- END OF REGISTRATION HERE -->
 
-                    <!-- REGISTRATION GOES HERE -->
-                    <div id="insertParkInfoHere"></div>
-                    <!-- END OF REGISTRATION HERE -->
+                        <!-- REGISTRATION GOES HERE -->
+                        <div id="insertParkInfoHere"></div>
+                        <!-- END OF REGISTRATION HERE -->
 
-                    <!-- FACEBOOK SHARE GOES HERE -->
-                    <!-- <div id="fb-root"></div> -->
-                    <!-- END OF FACEBOOK SHARE HERE -->
-                    <!-- TWITTER SHARE GOES HERE -->
-                    <div id="inserttwitterhere"></div>
-                    <!-- END OF TWITTER SHARE HERE -->
+                        <!-- FACEBOOK SHARE GOES HERE -->
+                        <div id="fb-root"></div>
+                        <!-- END OF FACEBOOK SHARE HERE -->
+                        <!-- TWITTER SHARE GOES HERE -->
+                        <div id="insertTwitterHere"></div>
+                        <!-- END OF TWITTER SHARE HERE -->
+                    </div>
                 </div>
                 <div class="col-sm-5">
                     <div class="grid" data-packery='{ "itemSelector": ".grid-item" }'>
-
-                        <div class="grid-item moveMenuText">
-                            <img class="block1" src="assets/images/search.png">
-                            <p class="menuText">Search For A Park</p>
+                        <div id="container">
+                            <div class="gutter-sizer"></div>
+                            <div class="grid-sizer"></div>
+                            <div class="grid-item moveMenuText">
+                                <img class="block1" src="assets/images/search.png">
+                                <p class="menuText">Search For A Park</p>
+                            </div>
+                            <div class="grid-item moveMenuText">
+                                <img class="block2" src="assets/images/maps.png">
+                                <p class="menuText">Get Directions</p>
+                            </div>
+                            <div class="grid-item moveMenuText">
+                                <img class="block3" src="assets/images/events.png">
+                                <p class="menuText">Events</p>
+                            </div>
+                            <div class="grid-item moveMenuText">
+                                <img class="block4" src="assets/images/share.png">
+                                <p class="menuText">Social Media Share</p>
+                            </div>
+                            <!-- <div class="grid-item moveMenuText"><img src="assets/images/hotels.png">
+                            <p class="menuText">Hotels</p>
+                            </div> -->
+                                <!-- <div class="grid-item moveMenuText"><img src="assets/images/gas.png">
+                                <p class="menuText">Gas</p>
+                            </div> -->
+                                <!-- <div class="grid-item moveMenuText"><img src="assets/images/restaurants.png">
+                                <p class="menuText">Restaurants</p>
+                            </div> -->
+                                <!-- <div class="grid-item moveMenuText"><img src="assets/images/convience_st.png">
+                                <p class="menuText">Convience Stores</p>
+                            </div> -->
+                                <!-- <div class="grid-item moveMenuText"><img src="assets/images/supplies1.png">
+                                <p class="menuText">Supplies</p>
+                            </div> -->
                         </div>
-                        <div class="grid-item moveMenuText">
-                            <img class="block2" src="assets/images/maps.png">
-                            <p class="menuText">Get Directions</p>
-                        </div>
-                        <div class="grid-item moveMenuText">
-                            <img class="block3" src="assets/images/events.png">
-                            <p class="menuText">Events</p>
-                        </div>
-                        <div class="grid-item moveMenuText">
-                            <img class="block4" src="assets/images/share.png">
-                            <p class="menuText">Social Media Share</p>
-                        </div>
-                        <!-- <div class="grid-item moveMenuText"><img src="assets/images/hotels.png">
-                        <p class="menuText">Hotels</p>
-                    </div> -->
-                        <!-- <div class="grid-item moveMenuText"><img src="assets/images/gas.png">
-                        <p class="menuText">Gas</p>
-                    </div> -->
-                        <!-- <div class="grid-item moveMenuText"><img src="assets/images/restaurants.png">
-                        <p class="menuText">Restaurants</p>
-                    </div> -->
-                        <!-- <div class="grid-item moveMenuText"><img src="assets/images/convience_st.png">
-                        <p class="menuText">Convience Stores</p>
-                    </div> -->
-                        <!-- <div class="grid-item moveMenuText"><img src="assets/images/supplies1.png">
-                        <p class="menuText">Supplies</p>
-                    </div> -->
                     </div>
                 </div>
             </div>

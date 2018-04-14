@@ -11,16 +11,19 @@
 var $grid = $('.grid').packery({
   itemSelector: '.grid-item',
   // columnWidth helps with drop positioning
-  columnWidth: 100,
-  horizontal: true
-
+  columnWidth: 50,
+  gutter: '.gutter-sizer',
+  vertical: true
 });
 // make all items draggable
 var $items = $grid.find('.grid-item').draggable();
 // bind drag events to Packery
 $grid.packery( 'bindUIDraggableEvents', $items );
 
-
+var $container = $('#container').packery({
+  itemSelector: '.grid-item',
+  columnWidth: $container.find('.grid-sizer')[0]
+});
 
 //FACEBOOK SDK JAVASCRIPT
 
