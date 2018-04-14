@@ -2,16 +2,18 @@
 //==================
 let selectedParkName;
 
+
 // CODE
 // ========================================================================
 $(document).ready(function () {
+
 
 // CLICK HANDLER FOR RANDOM PARK SEARCH
 // ========================================================================
   $("#randomParkBtn").on("click", function (event) {
     console.log("click handler working");
     event.preventDefault();
-    $('#insertParkInfoHere').empty();
+    emptyNPS();
     // //Pick A Random Number Between 1-60
     var randomSelect = Math.floor(Math.random() * 60);
     console.log(randomSelect); //number in console
@@ -27,13 +29,14 @@ $(document).ready(function () {
     //  
     var pickRandom = parkCodes[Math.floor(Math.random() * parkCodes.length)];
     console.log(pickRandom);
-   
+    //AJAX CALL OF API QUERY
     $.ajax({
       url: "https://developer.nps.gov/api/v1/parks?parkCode=" + selectedCode + "&api_key=7wQNlZMqMhlH0js2AdSZsiMoge4n3Z0ud2rZVlfW",
       method: "GET"
     }).done(function (response) {
       console.log('response.data[0]', response.data[0]);
-      $('#insertParkInfoHere').empty();
+      emptyNPS();
+      //APPEND TO DOM
       $('#insertParkInfoHere').append('<p id="responseTitle">' + response.data[0].fullName + + '</p>');
       $('#insertParkInfoHere').append('<p id="responseInfo">' + response.data[0].description + '</p>');
       $('#insertParkInfoHere').append('<p id="responseTitle">' + "Location: " + '</p><p id="responseInfo">' + response.data[0].states + '</p>');
@@ -61,7 +64,7 @@ $(document).ready(function () {
       url: "https://developer.nps.gov/api/v1/parks?stateCode=" + selectedState + "&api_key=7wQNlZMqMhlH0js2AdSZsiMoge4n3Z0ud2rZVlfW",
       method: "GET"
     }).done(function (response) {
-      $('#insertParkInfoHere').empty();
+      emptyNPS();
 
       console.log("response ", response);
 
@@ -114,7 +117,7 @@ $(document).ready(function () {
       console.log(response);
 
       // forEach to bring up more than 1 park
-      $('#insertParkInfoHere').empty();
+      emptyNPS();
       $('#insertParkInfoHere').append('<p id="responseTitle">' + response.data[0].fullName + '</p>');
       $('#insertParkInfoHere').append('<p id="responseInfo">' + response.data[0].description + '</p>');
       $('#insertParkInfoHere').append('<p id="responseTitle">' + "Location: " + '</p><p id="responseInfo">' + response.data[0].states + '</p>');
@@ -126,14 +129,13 @@ $(document).ready(function () {
 
 const emptyNPS = () => {
   console.log('in emptyNPS');
-  $('#insertSearchFormhere').empty();
-  $('#insertParkInfoHere').empty();
+  $('#insertGooglehere').empty();$('#loginPrompt').empty();$('#insertSearchFormhere').empty();$('#insertRegistrationhere').empty();$('#insertParkInfoHere').empty();$('#insertFacebookHere').empty();$('#insertTwitterHere').empty();
 }
 
 
   // ("#browseParkBtn").on("click", function (event) {
   //   event.preventDefault();
-  //   $('#insertGooglehere').empty();
+  //   emptyNPS();
   //   var place = $('#browseParkOption').val().trim();
   //   console.log(place);
   //  // $('#insertGooglehere').append(' <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCESN4bg_XY8N82CwU7ssef7snFR53K1rY&q=' + place + '" allowfullscreen></iframe >')
@@ -158,7 +160,7 @@ const emptyNPS = () => {
           method: "GET"
         }).done(function (response) {
           console.log('response.data[0]', response.data[0]);
-          $('#insertParkInfoHere').empty();
+          emptyNPS();
           $('#insertParkInfoHere').append('<p id="responseTitle">' + response.data[0].fullName + '</p>');
           $('#insertParkInfoHere').append('<p id="responseInfo">' + response.data[0].description + '</p>');
           $('#insertParkInfoHere').append('<p id="responseTitle">' + "Location: " + '</p><p id="responseInfo">' + response.data[0].states + '</p>');
@@ -195,7 +197,7 @@ const emptyNPS = () => {
   //       method: "GET"
   //     }).done(function (response) {
   //       console.log('response.data[0]', response.data[0]);
-  //       $('#insertParkInfoHere').empty();
+  //       emptyNPS();
   //       $('#insertParkInfoHere').append('<p id="responseTitle">' + response.data[0].fullName + '</p>');
   //       $('#insertParkInfoHere').append('<p id="responseTitle">' + "Location: " + '</p><p id="responseInfo">' + response.data[0].states + '</p>');
   //     });

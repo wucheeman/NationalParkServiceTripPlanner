@@ -9,7 +9,7 @@ const dbInterface = {
   password: '',
   initializeDB: function () {
     // initializes database at start of planning session
-    console.log('in dbInterface.initializeDB()');
+    // console.log('in dbInterface.initializeDB()');
     const config = {
       apiKey: "AIzaSyCaK_iaORmRwSf2oxnDDWoaE48-gHXoxLM",
       authDomain: "npconnect-60820.firebaseapp.com",
@@ -23,7 +23,7 @@ const dbInterface = {
   },
   createNewUser(userName, userEmail, userPassword) {
     // TODO (future) return success or failure
-    console.log('in dbInterface.createNewUser');
+    // console.log('in dbInterface.createNewUser');
     const processedUserEmail = this.processUserEmail(userEmail);
     // console.log('processedUserEmail is ' + processedUserEmail);
     this.database.ref().child(processedUserEmail).set({
@@ -33,7 +33,7 @@ const dbInterface = {
     });
   },
   processUserEmail: function(userEmail) {
-    console.log('in processUserEmail');
+    // console.log('in processUserEmail');
     // Replaces '.' with '-dot-' in email address
     // needed to make legal key in Firebase
     return userEmail.split('.').join('-dot-');

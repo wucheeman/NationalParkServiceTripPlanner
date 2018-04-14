@@ -1,7 +1,7 @@
 body {
   background-image: url("http://eskipaper.com/images/amazing-mountain-scenery-1.jpg");
   background-repeat: no-repeat;
-  background-size: cover 100%;
+  background-size: cover;
   background-position: left top;
   max-height: 100%;
   max-width: 100%;
@@ -68,6 +68,11 @@ transition: background-color 0.5s ease;
   transition: background-color 0.5s ease;
   border: 0px;
   color: white;
+  cursor: pointer;
+}
+#register {
+  cursor: pointer;
+  color: white;
 }
 .nav-link {
   background-color: #492202;
@@ -115,6 +120,9 @@ transition: background-color 0.5s ease;
 }
 #randomParkBtn:hover {
   background-color: #723707;
+}
+#searchBtn, #directionsBtn, #eventsBtn, #shareBtn, #hotelBtn, #gasBtn, #foodBtn, #convienceStoreBtn, #sportBtn {
+  cursor: pointer;
 }
 
 #footer {
@@ -213,6 +221,10 @@ font-family: 'Playfair Display', serif; */
   -webkit-transition: -webkit-transform 0.2s;
           transition: transform 0.2s;
   
+}
+
+.form-control {
+color: #c5a56d
 }
 
 .responseTitle {

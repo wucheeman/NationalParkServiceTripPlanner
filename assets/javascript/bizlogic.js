@@ -1,8 +1,14 @@
+// bizlogic.js
+
+
 $( document ).ready(function() {
   console.log( "ready!" );
   dbInterface.initializeDB();
   $(document).on('click', clickHandler);
 
+
+// 
+// ========================================================================
 function LoadFbSDK (d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -10,10 +16,11 @@ function LoadFbSDK (d, s, id) {
   js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
  }   (document, 'script', 'facebook-jssdk');
-
 });
 
 
+// 
+// ========================================================================
 const checkPassword = (email, password) => {
   // Authorizes access to NPS Connect as a user
     console.log('in checkPassword');
@@ -48,6 +55,9 @@ const checkPassword = (email, password) => {
     });
 }
 
+
+// 
+// ========================================================================
 const clickHandler = (e) => {
   console.log('in clickHandler');
   const clickTarget = e.target.id;
@@ -99,6 +109,9 @@ const clickHandler = (e) => {
   }
 }
 
+
+// 
+// ========================================================================
 // TODO: add this event handler as a separate function
 const captureProfileData = (e) => {
   // $("#submitGoFire").on("click", function(event) {
@@ -121,6 +134,8 @@ const captureProfileData = (e) => {
 }
 
 
+// VALIDATE PASSWORD
+// ========================================================================
 const validatePassword = (password1, password2) => {
   console.log('in validatePassword');
     if (password1 === password2) {

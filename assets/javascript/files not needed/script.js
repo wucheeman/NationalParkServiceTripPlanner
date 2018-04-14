@@ -1,5 +1,5 @@
-/// this is stuff anthony is saving incase he needs it later, you may find it useful as well
-
+// this is stuff anthony is saving incase he needs it later, you may find it useful as well
+// ========================================================================
 
 //useful to save for later -- anthony
   // var searchThis =  [ $("#userInput").val(''), $(this).data('search') ]
