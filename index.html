@@ -2,21 +2,14 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>NPS Connect: National Park Service Trip Planner</title>
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
-
+        crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-
     <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT|Permanent+Marker" rel="stylesheet">
-
 </head>
 
 
@@ -51,7 +44,11 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <!-- FACEBOOK SHARE -->
-                                <div class="fb-share-button" data-href="https://www.facebook.com/nationalparkservice/?ref=br_rs" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Fnationalparkservice%2F%3Fref%3Dbr_rs&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+                                <div class="fb-share-button" data-href="https://www.facebook.com/nationalparkservice/?ref=br_rs" data-layout="button_count"
+                                    data-size="large" data-mobile-iframe="true">
+                                    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Fnationalparkservice%2F%3Fref%3Dbr_rs&amp;src=sdkpreparse"
+                                        class="fb-xfbml-parse-ignore">Share</a>
+                                </div>
                                 <!-- END OF FACEBOOK SHARE SECTION -->
                             </div>
                             <div class="col-sm-6">
@@ -59,140 +56,91 @@
 
                                 <!-- END OF TWITTER SHARE SECTION -->
                             </div>
-
-
-
-
-
-
-
-
-
-
-                            
-
-
-
-
-
-
-
-
-
-
                         </div>
                     </div>
                 </div>
                 <!-- END OF LOGIN/GUEST ACCESS SECTION -->
-                
-
-
             </div>
         </div>
         <div class="row">
-
-
-
-            <nav class="navbar navbar-expand-lg navbar-dark text-white style="background-color: #492202;"" id="menu">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                      <ul class="navbar-nav ml-auto">
+            <nav class="navbar navbar-expand-lg navbar-dark text-white" style="background-color: #492202;" id="menu">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-white" id="register" href="#">Register</a>
+                            <a class="nav-link text-white" id="register">Register</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" id="login" href="#">Login</a>
+                            <a class="nav-link text-white" id="login">Login</a>
                         </li>
-                      </ul>
-                      
-                    </div>
-                  </nav>
-
-
-
-
-
-
-
-
-
+                    </ul>
+                </div>
+            </nav>
         </div>
         <!-- END OF HEADER/LOGO SECTION -->
 
-
-
-
-
         <!-- DYNAMIC CONTENT SECTION -->
-
         <div class="container">
             <div class="row">
                 <div class="col-sm-7">
                     <div id="dynamicContent">
                         <!-- GOOGLE IFRAME GOES HERE -->
                         <div id="insertGooglehere"></div>
-                        <!-- END OF GOOGLE IFRAME HERE -->
                         <!-- LOGIN GOES HERE -->
                         <div id="loginPrompt"></div>
-                        <!-- END OF LOGIN HERE -->
                         <!-- SEARCH GOES HERE -->
                         <div id="insertSearchFormhere"></div>
-                        <!-- END OF SEARCH HERE -->
-
                         <!-- REGISTRATION GOES HERE -->
                         <div id="insertRegistrationhere"></div>
-                        <!-- END OF REGISTRATION HERE -->
-
-                        <!-- REGISTRATION GOES HERE -->
+                        <!-- PARK INFO GOES HERE -->
                         <div id="insertParkInfoHere"></div>
-                        <!-- END OF REGISTRATION HERE -->
-
-                        <!-- FACEBOOK SHARE GOES HERE -->
-                        <div id="fb-root"></div>
-                        <!-- END OF FACEBOOK SHARE HERE -->
-                        <!-- TWITTER SHARE GOES HERE -->
+                        <!-- FACEBOOK LIKE GOES HERE -->
+                        <div id="insertFacebookHere"></div>
+                        <!-- TWITTER LIKE GOES HERE -->
                         <div id="insertTwitterHere"></div>
-                        <!-- END OF TWITTER SHARE HERE -->
                     </div>
                 </div>
                 <div class="col-sm-5">
-                    <div class="grid" data-packery='{ "itemSelector": ".grid-item" }'>
+                    <div class="grid" data-packery='{"itemSelector":".grid-item"}'>
                         <div id="container">
                             <div class="gutter-sizer"></div>
                             <div class="grid-sizer"></div>
                             <div class="grid-item moveMenuText">
-                                <img class="block1" src="assets/images/search.png">
+                                <img class="block1" id="searchBtn" alt="search" src="assets/images/search.png">
                                 <p class="menuText">Search For A Park</p>
                             </div>
                             <div class="grid-item moveMenuText">
-                                <img class="block2" src="assets/images/maps.png">
+                                <img class="block2" id="directionsBtn" alt="maps" src="assets/images/maps.png">
                                 <p class="menuText">Get Directions</p>
                             </div>
                             <div class="grid-item moveMenuText">
-                                <img class="block3" src="assets/images/events.png">
+                                <img class="block3" id="eventsBtn" alt="events" src="assets/images/events.png">
                                 <p class="menuText">Events</p>
                             </div>
                             <div class="grid-item moveMenuText">
-                                <img class="block4" src="assets/images/share.png">
+                                <img class="block4" id="shareBtn" alt="share" src="assets/images/share.png">
                                 <p class="menuText">Social Media Share</p>
                             </div>
-                            <!-- <div class="grid-item moveMenuText"><img src="assets/images/hotels.png">
-                            <p class="menuText">Hotels</p>
+                            <!-- <div class="grid-item moveMenuText">
+                                <img class="block5" id="hotelBtn" alt="hotels" src="assets/images/hotels.png">
+                                <p class="menuText">Hotels</p>
                             </div> -->
-                                <!-- <div class="grid-item moveMenuText"><img src="assets/images/gas.png">
+                            <div class="grid-item moveMenuText">
+                                <img class="block6" id="gasBtn" alt="gas" src="assets/images/gas.png">
                                 <p class="menuText">Gas</p>
-                            </div> -->
-                                <!-- <div class="grid-item moveMenuText"><img src="assets/images/restaurants.png">
+                            </div>
+                            <!-- <div class="grid-item moveMenuText">
+                                <img class="block7" id="foodBtn" alt="restaurants" src="assets/images/restaurants.png">
                                 <p class="menuText">Restaurants</p>
                             </div> -->
-                                <!-- <div class="grid-item moveMenuText"><img src="assets/images/convience_st.png">
+                            <!-- <div class="grid-item moveMenuText">
+                                <img class="block8" id="convienceStoreBtn" alt="convience store" src="assets/images/convience_st.png">
                                 <p class="menuText">Convience Stores</p>
                             </div> -->
-                                <!-- <div class="grid-item moveMenuText"><img src="assets/images/supplies1.png">
+                            <div class="grid-item moveMenuText">
+                                <img class="block9" id="sportBtn" alt="supplies" src="assets/images/supplies1.png">
                                 <p class="menuText">Supplies</p>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -207,7 +155,7 @@
                     <!-- BOOTSTRAP: SEARCH FORM START -->
                     <div class="row">
                         <div class="col">
-                            <form class="form-horizontal" role="form" id="formWrapper">
+                            <form class="form-horizontal" id="formWrapper">
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="row">
@@ -374,16 +322,11 @@
                             <!-- TWITTER FEED WIDGET - NOT DONE YET -->
 
 
-                        </div>
-                        <!-- end col -->
-                    </div>
-                    <!-- end row -->
-                </div>
-                <!-- end col-sm-7/dynamic content section -->
-            </div>
-            <!-- end row -->
-        </div>
-        <!-- end container -->
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+                </div><!-- end col-sm-7/dynamic content section -->
+            </div><!-- end row -->
+        </div><!-- end container -->
 
 
 
@@ -414,25 +357,13 @@
                     </footer>
                 </div>
             </div>
-        </div>
+        </div><!-- FOOTER END HERE -->
 
+    </div><!-- CONTAINER END HERE -->
 
-
-        <script
-        src="https://code.jquery.com/jquery-3.3.1.js"
-        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-        crossorigin="anonymous"></script>
-    
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
-    
-        <script
-        src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-        crossorigin="anonymous"></script>
-    
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/packery@2/dist/packery.pkgd.js"></script>
-        
         <script src="assets/javascript/nps.js"></script>
         <script src="assets/javascript/main.js"></script>
         <script src="assets/javascript/dbif.js"></script>
@@ -440,5 +371,4 @@
         <script src="assets/javascript/buildHTML.js"></script>
         <script src="assets/javascript/bizlogic.js"></script>
 </body>
-
 </html>
